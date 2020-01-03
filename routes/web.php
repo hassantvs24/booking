@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'Dashboard\DashboardController@index');
+
 });
+
+
+//==================== Toggle Sidebar =======================
+Route::get('savestate', 'MainController@saveState');
+//Route::get('key', 'MainController@key');
+//==================== /Toggle Sidebar =======================
+
+Route::get('/catch', function () {
+    Artisan::call('config:cache');
+});
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

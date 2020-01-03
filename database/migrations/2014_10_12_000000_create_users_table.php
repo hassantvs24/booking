@@ -17,9 +17,18 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('contact',11)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('userType')->default('Customer');//Official/Agent/Customer
+            $table->bigInteger('userRuleID')->nullable()->unsigned()->index();
+            $table->foreign('userRuleID')->references('id')->on('user_rules')->onDelete('set null')->onUpdate('No Action');
+            $table->string('company')->nullable();
+            $table->string('address')->nullable();
+            $table->string('photo')->nullable();
+            $table->double('balance')->default(0);
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
