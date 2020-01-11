@@ -131,8 +131,8 @@ $(function() {
 
     // Styled file input
     $(".file-styled").uniform({
-        fileButtonClass: 'action btn btn-default btn-icon',
-        fileButtonHtml: '<i class="icon-upload"></i>'
+        fileButtonClass: 'action btn btn-default btn-facility',
+        fileButtonHtml: '<i class="facility-upload"></i>'
     });
     
 });

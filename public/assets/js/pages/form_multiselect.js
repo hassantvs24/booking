@@ -48,7 +48,7 @@ $(function() {
     $('.multiselect-filtering').multiselect({
         enableFiltering: true,
         templates: {
-            filter: '<li class="multiselect-item multiselect-filter"><i class="icon-search4"></i> <input class="form-control" type="text"></li>'
+            filter: '<li class="multiselect-item multiselect-filter"><i class="facility-search4"></i> <input class="form-control" type="text"></li>'
         },
         onChange: function() {
             $.uniform.update();
@@ -61,7 +61,7 @@ $(function() {
         includeSelectAllOption: true,
         enableFiltering: true,
         templates: {
-            filter: '<li class="multiselect-item multiselect-filter"><i class="icon-search4"></i> <input class="form-control" type="text"></li>'
+            filter: '<li class="multiselect-item multiselect-filter"><i class="facility-search4"></i> <input class="form-control" type="text"></li>'
         },
         onSelectAll: function() {
             $.uniform.update();
@@ -118,7 +118,7 @@ $(function() {
         includeSelectAllOption: true,
         enableFiltering: true,
         templates: {
-            filter: '<li class="multiselect-item multiselect-filter"><i class="icon-search4"></i> <input class="form-control" type="text"></li>'
+            filter: '<li class="multiselect-item multiselect-filter"><i class="facility-search4"></i> <input class="form-control" type="text"></li>'
         },
         onSelectAll: function() {
             $.uniform.update();

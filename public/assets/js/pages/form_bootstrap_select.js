@@ -14,7 +14,7 @@ $(function() {
     // Override defaults
     $.fn.selectpicker.defaults = {
         iconBase: '',
-        tickIcon: 'icon-checkmark3'
+        tickIcon: 'facility-checkmark3'
     }
 
 

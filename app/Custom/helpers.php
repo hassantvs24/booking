@@ -251,3 +251,30 @@ function getCsv($columnNames, $rows, $fileName = 'reports.csv') {
 }
 
 
+function name_gen($routs){
+
+    switch ($routs) {
+
+        case "service-go-save":
+            $rout = 'new-service-form';
+            break;
+        case "service-go-edit":
+            $rout = "service-edit-form";
+            break;
+        case "service-del-photo":
+            $rout = "service-photo-del";
+            break;
+        default:
+            $rout = $routs;
+    }
+
+    $getResult = ucfirst(str_replace('-', ' ', $rout));
+    $result = $getResult;
+    if(Str::endsWith($getResult, 'del')){
+        $result = $getResult.'ete';
+    }
+
+    return $result;
+}
+
+

@@ -22,21 +22,21 @@ $(function() {
             title: "<a href='http://themeforest.net/item/limitless-responsive-web-application-kit/13080328' target='_blank'>Limitless - Responsive Web Application Kit</a>",
             description: "Limitless is one of the best application templates ever built. Very flexible and clean admin template based on Bootstrap and Less. Available in 4 different layouts.",
             sales: "<strong>12930</strong>",
-            comments: "<div class='text-orange mb-5'><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i></div> 35 ratings",
+            comments: "<div class='text-orange mb-5'><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i></div> 35 ratings",
         },
         {
             cover: "https://thumb-tf.s3.envato.com/files/91482991/icon.png",
             title: "<a href='http://themeforest.net/item/londinium-responsive-bootstrap-3-admin-template/6978619' target='_blank'>Londinium - responsive bootstrap 3 admin template</a>",
             description: "Londinium – a new premium admin skin with lots of custom elements, plugins and very flexible content structure. Londinium is powered with Bootstrap framework.",
             sales: "<strong>8509</strong>",
-            comments: "<div class='text-orange mb-5'><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i></div> 56 ratings",
+            comments: "<div class='text-orange mb-5'><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i></div> 56 ratings",
         },
         {
             cover: "https://thumb-tf.s3.envato.com/files/84750409/icon.png",
             title: "<a href='http://themeforest.net/item/its-brain-responsive-bootstrap-3-admin-template/909197' target='_blank'>It's Brain - Responsive Bootstrap 3 Admin Template</a>",
             description: "It's Brain admin template is based on Bootstrap framework and includes a lot of different features. Comes with fixed and liquid layouts in both light and dark versions.",
             sales: "<strong>3902</strong>",
-            comments: "<div class='text-orange mb-5'><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i><i class='icon-star-full2'></i></div> 453 ratings",
+            comments: "<div class='text-orange mb-5'><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i><i class='facility-star-full2'></i></div> 453 ratings",
         }
     ];
 
@@ -167,7 +167,7 @@ $(function() {
                     return '<strong>Model</strong>';
 
                 case 2:
-                    return '<i class="icon-calendar3 position-left"></i> Date';
+                    return '<i class="facility-calendar3 position-left"></i> Date';
 
                 case 3:
                     return '<u><i>Price</i></u>';
@@ -333,7 +333,7 @@ $(function() {
         var button = document.createElement('BUTTON');
 
         // Add attributes and extra content
-        button.innerHTML = '<i class="icon-arrow-down22"></i>';
+        button.innerHTML = '<i class="facility-arrow-down22"></i>';
         button.className = 'changeType';
 
         return button;

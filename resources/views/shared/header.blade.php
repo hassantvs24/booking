@@ -21,7 +21,7 @@
             <!--Stock Notification-->
             <!--<li title="Stock notification" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="icon-truck"></i>
+                    <i class="facility-truck"></i>
                     <span class="visible-xs-inline-block position-right">Stock Notification</span>
                     <span class="badge bg-warning-400" id="stockNotify">0</span>
                 </a>
@@ -60,7 +60,7 @@
                     <li><a href="#"  data-toggle="modal" data-target="#codexModal"><i class="icon-regexp"></i> Pin Code</a></li>
                     @endif
                     <li class="divider"></li>
-                    <!--<li><a href="#"><i class="icon-fan"></i> Account settings</a></li>-->
+                    <!--<li><a href="#"><i class="facility-fan"></i> Account settings</a></li>-->
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             <i class="icon-switch2"></i> Logout</a>

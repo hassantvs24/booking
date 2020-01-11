@@ -16,6 +16,7 @@ class CreateLocationTable extends Migration
         Schema::create('location', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',100);
+            $table->string('address')->nullable();
             $table->decimal('lat')->default(23.777176);
             $table->decimal('lon')->default(90.399452);
             $table->softDeletes();

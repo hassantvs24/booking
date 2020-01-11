@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('title')
-    Dashboard
+    @lang('site.content.dashboard_title')
 @endsection
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-flat border-top-success">
                 <div class="panel-heading">
-                    <h6 class="panel-title">Top custom border</h6>
+                    <h6 class="panel-title">@lang('site.content.dashboard_page')</h6>
                 </div>
 
                 <div class="panel-body">

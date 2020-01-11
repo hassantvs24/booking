@@ -35,12 +35,12 @@ $(function() {
     });
 
 
-    // Custom arrow icon
-    $(".selectbox-custom-icon").selectBoxIt({
+    // Custom arrow facility
+    $(".selectbox-custom-facility").selectBoxIt({
         autoWidth: false,
 
-        // Set a custom down arrow icon by adding new CSS class(s)
-        downArrowIcon: "icon-three-bars"
+        // Set a custom down arrow facility by adding new CSS class(s)
+        downArrowIcon: "facility-three-bars"
     });
 
 

@@ -19,7 +19,7 @@ $(function() {
     $('#block-panel').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -39,7 +39,7 @@ $(function() {
     $('#block-sidebar').on('click', function() {
         var block = $('.sidebar');
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#1b2024',
@@ -61,7 +61,7 @@ $(function() {
     // Block page
     $('#block-page').on('click', function() {
         $.blockUI({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#1b2024',
@@ -88,7 +88,7 @@ $(function() {
     $('#basic-overlay').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -108,7 +108,7 @@ $(function() {
     $('#overlay-custom').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#0E8F92',
@@ -129,7 +129,7 @@ $(function() {
     $('#overlay-cover').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#3F9EC3',
@@ -170,7 +170,7 @@ $(function() {
     $('#no-overlay').on('click', function() {
         var block = $(this).parent();
         $(block).block({
-        	message: '<i class="icon-spinner4 spinner"></i>',
+        	message: '<i class="facility-spinner4 spinner"></i>',
         	showOverlay: false,
         	timeout: 2000, //unblock after 2 seconds
             css: {
@@ -217,7 +217,7 @@ $(function() {
     $('#spinner-only').on('click', function() {
         var block = $(this).parent();
         $(block).block({
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -237,7 +237,7 @@ $(function() {
     $('#custom-message').on('click', function() {
         var block = $(this).parent();
         $(block).block({
-        	message: '<span class="text-semibold"><i class="icon-spinner4 spinner position-left"></i>&nbsp; Updating data</span>',
+        	message: '<span class="text-semibold"><i class="facility-spinner4 spinner position-left"></i>&nbsp; Updating data</span>',
         	timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -305,15 +305,15 @@ $(function() {
         });
 
         window.setTimeout(function () {
-           message.html('<i class="icon-spinner4 spinner"></i> <span class="text-semibold display-block">Loading</span>')
+           message.html('<i class="facility-spinner4 spinner"></i> <span class="text-semibold display-block">Loading</span>')
         }, 0); 
 
         window.setTimeout(function () {
-           message.html('<i class="icon-spinner4 spinner"></i> <span class="text-semibold display-block">Please wait</span>')
+           message.html('<i class="facility-spinner4 spinner"></i> <span class="text-semibold display-block">Please wait</span>')
         }, 2000); 
 
         window.setTimeout(function () {
-           message.addClass('bg-danger').html('<i class="icon-warning"></i> <span class="text-semibold display-block">Load error</span>')
+           message.addClass('bg-danger').html('<i class="facility-warning"></i> <span class="text-semibold display-block">Load error</span>')
         }, 4000);
 
         window.setTimeout(function () {
@@ -358,7 +358,7 @@ $(function() {
     $('#custom-position').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             centerX: 0,
             centerY: 0,
@@ -388,7 +388,7 @@ $(function() {
     $('#auto-unblock').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -408,7 +408,7 @@ $(function() {
     $('#click-unblock').on('click', function() {
         var block = $(this).parent();
         $(block).block({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -435,7 +435,7 @@ $(function() {
     // Block callback
     $('#block-callback').on('click', function() {
         $.blockUI({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             fadeIn: 800, 
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -461,7 +461,7 @@ $(function() {
     // Unblock callback
     $('#unblock-callback').on('click', function() {
         $.blockUI({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#1b2024',
@@ -486,7 +486,7 @@ $(function() {
     // Overlay callback
     $('#overlay-callback').on('click', function() {
         $.blockUI({ 
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1b2024',
                 opacity: 0.8,

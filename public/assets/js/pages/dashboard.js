@@ -381,7 +381,7 @@ $(function() {
                         // Tooltip data
                         tooltip.html(
                             "<ul class='list-unstyled mb-5'>" +
-                                "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
+                                "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='facility-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
                                 "<li>" + "Visits: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
                                 "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
                             "</ul>"
@@ -522,7 +522,7 @@ $(function() {
             .attr('class', 'd3-tip')
             .html(function (d) {
                 return "<ul class='list-unstyled mb-5'>" +
-                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.name + " app" + "</div>" + "</li>" +
+                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='facility-circle-left2 position-left'></i>" + d.name + " app" + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.value + "</span>" + "</li>" +
                     "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.value * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
@@ -1962,7 +1962,7 @@ $(function() {
             .attr('class', 'd3-tip')
             .html(function (d) {
                 return "<ul class='list-unstyled mb-5'>" +
-                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
+                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='facility-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.alpha + "</span>" + "</li>" +
                     "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
@@ -2372,17 +2372,17 @@ $(function() {
         var data = [
             {
                 "browser": "Google Adwords",
-                "icon": "<i class='icon-google position-left'></i>",
+                "icon": "<i class='facility-google position-left'></i>",
                 "value": 1047,
                 "color" : "#66BB6A"
             }, {
                 "browser": "Social media",
-                "icon": "<i class='icon-share4 position-left'></i>",
+                "icon": "<i class='facility-share4 position-left'></i>",
                 "value": 2948,
                 "color": "#9575CD"
             }, {
                 "browser":"Youtube video",
-                "icon": "<i class='icon-youtube position-left'></i>",
+                "icon": "<i class='facility-youtube position-left'></i>",
                 "value": 3909,
                 "color": "#FF7043"
             }
@@ -3081,8 +3081,8 @@ $(function() {
     // ------------------------------
 
     // Initialize charts
-    progressCounter('#hours-available-progress', 38, 2, "#F06292", 0.68, "icon-watch text-pink-400", 'Hours available', '64% average')
-    progressCounter('#goal-progress', 38, 2, "#5C6BC0", 0.82, "icon-trophy3 text-indigo-400", 'Productivity goal', '87% average')
+    progressCounter('#hours-available-progress', 38, 2, "#F06292", 0.68, "facility-watch text-pink-400", 'Hours available', '64% average')
+    progressCounter('#goal-progress', 38, 2, "#5C6BC0", 0.82, "facility-trophy3 text-indigo-400", 'Productivity goal', '87% average')
 
     // Chart setup
     function progressCounter(element, radius, border, color, end, iconClass, textTitle, textAverage) {
@@ -3173,7 +3173,7 @@ $(function() {
         // Icon
         d3.select(element)
             .append("i")
-                .attr("class", iconClass + " counter-icon")
+                .attr("class", iconClass + " counter-facility")
                 .attr('style', 'top: ' + ((boxSize - iconSize) / 2) + 'px');
 
         // Title
@@ -3748,15 +3748,15 @@ $(function() {
     // Other codes
     // ------------------------------
 
-    // Grab first letter and insert to the icon
+    // Grab first letter and insert to the facility
     $(".table tr").each(function (i) {
 
         // Title
-        var $title = $(this).find('.letter-icon-title'),
+        var $title = $(this).find('.letter-facility-title'),
             letter = $title.eq(0).text().charAt(0).toUpperCase();
 
         // Icon
-        var $icon = $(this).find('.letter-icon');
+        var $icon = $(this).find('.letter-facility');
             $icon.eq(0).text(letter);
     });
 

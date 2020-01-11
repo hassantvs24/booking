@@ -15,7 +15,7 @@ class CreateTimeSlotTable extends Migration
     {
         Schema::create('time_slot', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('timeSlot')->default('Night');
+            $table->string('name')->default('Night');
             $table->time('fromTime');
             $table->time('toTime');
             $table->softDeletes();

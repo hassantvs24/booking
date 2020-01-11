@@ -19,6 +19,11 @@ class User extends Authenticatable
         'name', 'email', 'password', 'contact', 'userType', 'userRuleID', 'company', 'address', 'photo', 'balance'
     ];
 
+
+    public function role(){
+        return $this->belongsTo('App\UserRules', 'userRuleID');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

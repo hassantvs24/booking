@@ -6,7 +6,7 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li class='dropdown'>" +
               "<a class='btn btn-default dropdown-toggle" + size + "' data-toggle='dropdown' href='#'>" +
-              "<i class='icon-font'></i>&nbsp;<span class='current-font'>" + locale.font_styles.normal + "</span>&nbsp;<b class='caret'></b>" +
+              "<i class='facility-font'></i>&nbsp;<span class='current-font'>" + locale.font_styles.normal + "</span>&nbsp;<b class='caret'></b>" +
               "</a>" +
               "<ul class='dropdown-menu'>" +
                 "<li><a data-wysihtml5-command='formatBlock' data-wysihtml5-command-value='div' tabindex='-1'>" + locale.font_styles.normal + "</a></li>" +
@@ -24,10 +24,10 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='bold' title='" + locale.emphasis.bold + "' tabindex='-1'><i class='icon-bold2'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='italic' title='" + locale.emphasis.italic + "' tabindex='-1'><i class='icon-italic2'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='underline' title='" + locale.emphasis.underline + "' tabindex='-1'><i class='icon-underline2'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='strikeThrough' title='" + locale.emphasis.strike + "' tabindex='-1'><i class='icon-strikethrough3'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='bold' title='" + locale.emphasis.bold + "' tabindex='-1'><i class='facility-bold2'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='italic' title='" + locale.emphasis.italic + "' tabindex='-1'><i class='facility-italic2'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='underline' title='" + locale.emphasis.underline + "' tabindex='-1'><i class='facility-underline2'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='strikeThrough' title='" + locale.emphasis.strike + "' tabindex='-1'><i class='facility-strikethrough3'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -36,10 +36,10 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "' tabindex='-1'><i class='icon-list'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "' tabindex='-1'><i class='icon-list-numbered'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "' tabindex='-1'><i class='icon-indent-decrease'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "' tabindex='-1'><i class='icon-indent-increase'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "' tabindex='-1'><i class='facility-list'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "' tabindex='-1'><i class='facility-list-numbered'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "' tabindex='-1'><i class='facility-indent-decrease'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "' tabindex='-1'><i class='facility-indent-increase'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -52,7 +52,7 @@
                         "<div class='modal-content'>" +
                             "<div class='modal-header'>" +
                                 "<a class='close' data-dismiss='modal'>&times;</a>" +
-                                "<h5 class='modal-title'>" + " <i class='icon-link position-left'></i>" + locale.link.insert + "</h5>" +
+                                "<h5 class='modal-title'>" + " <i class='facility-link position-left'></i>" + locale.link.insert + "</h5>" +
                             "</div>" +
                             "<div class='modal-body with-padding'>" +
                                 "<div class='form-group'>" +
@@ -67,7 +67,7 @@
                         "</div>" +
                     "</div>" +
                 "</div>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' tabindex='-1'><i class='icon-link'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' tabindex='-1'><i class='facility-link'></i></a>" +
             "</li>";
         },
 
@@ -79,7 +79,7 @@
                         "<div class='modal-content'>" +
                             "<div class='modal-header'>" +
                                 "<a class='close' data-dismiss='modal'>&times;</a>" +
-                                "<h5 class='modal-title'>" + " <i class='icon-image2 position-left'></i>" + locale.image.insert + "</h5>" +
+                                "<h5 class='modal-title'>" + " <i class='facility-image2 position-left'></i>" + locale.image.insert + "</h5>" +
                             "</div>" +
                             "<div class='modal-body with-padding'>" +
                                 "<div class='form-group'>" +
@@ -93,7 +93,7 @@
                         "</div>" +
                     "</div>" +
                 "</div>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "' tabindex='-1'><i class='icon-image2'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "' tabindex='-1'><i class='facility-image2'></i></a>" +
             "</li>";
         },
 
@@ -101,7 +101,7 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-success btn-icon" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "' tabindex='-1'><i class='icon-embed2'></i></a>" +
+                "<a class='btn btn-success btn-facility" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "' tabindex='-1'><i class='facility-embed2'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -110,10 +110,10 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='justifyleft' title='" + locale.alignment.left + "' tabindex='-1'><i class='icon-paragraph-left3'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='justifyright' title='" + locale.alignment.right + "' tabindex='-1'><i class='icon-paragraph-right3'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='justifycenter' title='" + locale.alignment.center + "' tabindex='-1'><i class='icon-paragraph-center3'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='justifyfull' title='" + locale.alignment.full + "' tabindex='-1'><i class='icon-paragraph-justify3'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='justifyleft' title='" + locale.alignment.left + "' tabindex='-1'><i class='facility-paragraph-left3'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='justifyright' title='" + locale.alignment.right + "' tabindex='-1'><i class='facility-paragraph-right3'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='justifycenter' title='" + locale.alignment.center + "' tabindex='-1'><i class='facility-paragraph-center3'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='justifyfull' title='" + locale.alignment.full + "' tabindex='-1'><i class='facility-paragraph-justify3'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -122,8 +122,8 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='undo' title='" + locale.action.undo + "' tabindex='-1'><i class='icon-undo'></i></a>" +
-                "<a class='btn btn-default btn-icon" + size + "' data-wysihtml5-command='redo' title='" + locale.action.redo + "' tabindex='-1'><i class='icon-redo'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='undo' title='" + locale.action.undo + "' tabindex='-1'><i class='facility-undo'></i></a>" +
+                "<a class='btn btn-default btn-facility" + size + "' data-wysihtml5-command='redo' title='" + locale.action.redo + "' tabindex='-1'><i class='facility-redo'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -131,7 +131,7 @@
         "color": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li class='dropdown'>" +
-              "<a class='btn btn-default dropdown-toggle" + size + "' data-toggle='dropdown' href='#' tabindex='-1'><i class='icon-droplet'></i>" +
+              "<a class='btn btn-default dropdown-toggle" + size + "' data-toggle='dropdown' href='#' tabindex='-1'><i class='facility-droplet'></i>" +
                 "<span class='current-color'>" + locale.colours.black + "</span>&nbsp;<b class='caret'></b>" +
               "</a>" +
               "<ul class='dropdown-menu color-select'>" +

@@ -56,7 +56,7 @@ $(function() {
     // Bootstrap select
     $.fn.selectpicker.defaults = {
         iconBase: '',
-        tickIcon: 'icon-checkmark-circle'
+        tickIcon: 'facility-checkmark-circle'
     }
     $('.bootstrap-select').selectpicker();
 
@@ -76,7 +76,7 @@ $(function() {
         new PNotify({
             title: 'blue Notice',
             text: 'Check me out! I\'m a notice.',
-            icon: 'icon-blue22',
+            icon: 'facility-blue22',
             animate_speed: 200,
             delay: 5000,
             addclass: 'bg-blue-400'

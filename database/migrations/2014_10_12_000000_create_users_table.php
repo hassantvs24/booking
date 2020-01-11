@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('contact',11)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('userType')->default('Customer');//Official/Agent/Customer
+            $table->string('userType', 20)->default('Customer');//Super Admin/Admin/Agent/Customer
             $table->bigInteger('userRuleID')->nullable()->unsigned()->index();
             $table->foreign('userRuleID')->references('id')->on('user_rules')->onDelete('set null')->onUpdate('No Action');
             $table->string('company')->nullable();

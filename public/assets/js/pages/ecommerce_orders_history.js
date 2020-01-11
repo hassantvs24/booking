@@ -46,7 +46,7 @@ $(function() {
         buttons: [
             {
                 extend: 'pdfHtml5',
-                text: 'Export to PDF <i class="icon-file-pdf position-right"></i>',
+                text: 'Export to PDF <i class="facility-file-pdf position-right"></i>',
                 className: 'btn bg-teal-400',
                 orientation: 'landscape',
                 exportOptions: {

@@ -33,7 +33,7 @@ $(function() {
         buttons: [
             {
                 extend: 'print',
-                text: '<i class="icon-printer position-left"></i> Print table',
+                text: '<i class="facility-printer position-left"></i> Print table',
                 className: 'btn bg-blue'
             }
         ]
@@ -45,7 +45,7 @@ $(function() {
         buttons: [
             {
                 extend: 'print',
-                text: '<i class="icon-printer position-left"></i> Print table',
+                text: '<i class="facility-printer position-left"></i> Print table',
                 className: 'btn bg-blue',
                 autoPrint: false
             }
@@ -62,7 +62,7 @@ $(function() {
         buttons: [
             {
                 extend: 'print',
-                text: '<i class="icon-printer position-left"></i> Print table',
+                text: '<i class="facility-printer position-left"></i> Print table',
                 className: 'btn btn-default',
                 exportOptions: {
                     columns: ':visible'
@@ -70,8 +70,8 @@ $(function() {
             },
             {
                 extend: 'colvis',
-                text: '<i class="icon-three-bars"></i> <span class="caret"></span>',
-                className: 'btn btn-default btn-icon'
+                text: '<i class="facility-three-bars"></i> <span class="caret"></span>',
+                className: 'btn btn-default btn-facility'
             }
         ]
     });
@@ -84,12 +84,12 @@ $(function() {
                 {
                     extend: 'print',
                     className: 'btn btn-default',
-                    text: '<i class="icon-printer position-left"></i> Print all'
+                    text: '<i class="facility-printer position-left"></i> Print all'
                 },
                 {
                     extend: 'print',
                     className: 'btn btn-default',
-                    text: '<i class="icon-checkmark3 position-left"></i> Print selected',
+                    text: '<i class="facility-checkmark3 position-left"></i> Print selected',
                     exportOptions: {
                         modifier: {
                             selected: true

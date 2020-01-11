@@ -28,7 +28,7 @@
 			saveState		: false,
 			showCount		: false,
 			classCount		: 'dd-count',
-			classIcon		: 'dd-icon',
+			classIcon		: 'dd-facility',
 			linkType		: 'backlink',
 			resetText		: 'All',
 			headerTag		: 'h6',

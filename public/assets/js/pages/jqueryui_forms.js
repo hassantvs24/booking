@@ -47,7 +47,7 @@ $(function() {
 
 
     // Icon trigger
-    $(".datepicker-icon").datepicker({
+    $(".datepicker-facility").datepicker({
         showOn: "button",
         buttonImage: "assets/images/ui/datepicker_trigger.png",
         buttonImageOnly: true
@@ -418,8 +418,8 @@ $(function() {
                 // Add input group button
             var wrapper2 = $("<span>").attr("class", "input-group-btn").appendTo(this.wrapper);
 
-            // Append fonr control icon
-            this.wrapper.append('<div class="form-control-feedback"><i class="icon-search4 text-size-base"></i></div>');
+            // Append fonr control facility
+            this.wrapper.append('<div class="form-control-feedback"><i class="facility-search4 text-size-base"></i></div>');
 
             // Link
             $( "<a>" )
@@ -427,7 +427,7 @@ $(function() {
                 .appendTo( wrapper2 )
                 .button({
                     icons: {
-                        primary: "icon-arrow-down12"
+                        primary: "facility-arrow-down12"
                     },
                     text: false
                 })
@@ -547,7 +547,7 @@ $(function() {
 
             $("<i>", {
                 style: item.element.attr("data-style"),
-                "class": item.element.attr("data-icon")
+                "class": item.element.attr("data-facility")
             }).prependTo(li);
 
             return li.appendTo(ul);

@@ -8,6 +8,6 @@ class Location extends Model
 {
     protected $table = 'location';
     protected $fillable = [
-        'name', 'lat', 'lon'
+        'name', 'address', 'lat', 'lon'
     ];
 }

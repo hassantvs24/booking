@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') | Hostel</title>
+    <title>@yield('title') | Booking</title>
 
     <!-- Global stylesheets -->
     <link href="{{asset('public/fonts.css')}}" rel="stylesheet" type="text/css">
@@ -12,6 +12,7 @@
     <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('public/assets/css/core.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('public/assets/css/components.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- Global stylesheets -->
 <!--Phone Number-->
     <link href="{{asset('public/assets/dial_code_flag/css/intlTelInput.css')}}" rel="stylesheet" type="text/css">
 <!--Phone Number-->
@@ -86,6 +87,58 @@
 
 <script type="text/javascript" src="{{asset('public/custom.js')}}"></script>
 
+@if (session()->has('save'))
+    <script type="text/javascript">
+        $(function () {
+            $.jGrowl("{{__('site.notify.save')}}", {
+                header: 'Success',
+                theme: 'bg-success',
+                life: 1500,
+                position: 'top-center'
+            });
+        });
+    </script>
+@endif
+
+@if (session()->has('edit'))
+    <script type="text/javascript">
+        $(function () {
+            $.jGrowl("{{__('site.notify.edit')}}", {
+                header: 'Success',
+                theme: 'bg-success',
+                life: 1500,
+                position: 'top-center'
+            });
+        });
+    </script>
+@endif
+
+@if (session()->has('del'))
+    <script type="text/javascript">
+        $(function () {
+            $.jGrowl("{{__('site.notify.del')}}", {
+                header: 'Success',
+                theme: 'bg-success',
+                life: 1500,
+                position: 'top-center'
+            });
+        });
+    </script>
+@endif
+
+@if (session()->has('error'))
+    <script type="text/javascript">
+        $(function () {
+            $.jGrowl("{{__('site.notify.error')}}", {
+                header: 'Error',
+                theme: 'bg-danger',
+                life: 1500,
+                position: 'top-center'
+            });
+        });
+    </script>
+@endif
+
 <script type="text/javascript">
 
 
@@ -112,9 +165,7 @@
 
 
 
-
-
-                @if(Session::has('message'))
+    @if(Session::has('message'))
         var type = "{{ Session::get('alert-type') }}";
         switch(type){
             case 'info':

@@ -2,6 +2,32 @@
     white-space: nowrap;
 }
 
+.cap{
+    margin: -5px 0px 0px 0px;
+    color: grey;
+    font-size: 12px !important;
+    padding-bottom: 10px;
+    white-space: nowrap;
+}
+
+.cap:before{
+    content: '**';
+    color: red;
+}
+
+.cap1{
+    margin: 0px 0px 0px 0px;
+    color: grey;
+    font-size: 12px !important;
+    padding-bottom: 10px;
+    white-space: nowrap;
+}
+
+.cap1:before{
+    content: '**';
+    color: red;
+}
+
 .pac-container { z-index: 100000; }
 
 .sp-container { z-index: 100000; }

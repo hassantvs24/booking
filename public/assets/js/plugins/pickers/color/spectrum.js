@@ -768,7 +768,7 @@
             previewElement.css('background-color', 'transparent');
 
             if (!realColor && allowEmpty) {
-                // Update the replaced elements background with icon indicating no color selection
+                // Update the replaced elements background with facility indicating no color selection
                 previewElement.addClass("sp-clear-display");
             }
             else {

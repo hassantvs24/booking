@@ -71,7 +71,7 @@
     overflow: hidden;
     word-break: break-all;
 
-    // Add spacing between icon and text
+    // Add spacing between facility and text
 	[class*=icon-],
 	.glyphicon {
 		margin-right: @element-horizontal-spacing;
@@ -81,7 +81,7 @@
 	.file-input-new & {
 		color: @text-muted;
 
-		// And hide icon
+		// And hide facility
 		> [class*=icon-],
 		> .glyphicon {
 			display: none;
@@ -212,7 +212,7 @@
     width: 160px;
     height: 160px;
 
-    // Override for preview icon, use Icomoon instead
+    // Override for preview facility, use Icomoon instead
     &:after {
 		content: "\ea0c";
 		font-family: "icomoon";
@@ -222,7 +222,7 @@
 		-moz-osx-font-smoothing: grayscale;
     }
 
-    // Hide glyphicon icon
+    // Hide glyphicon facility
     .glyphicon {
     	display: none;
     }
@@ -260,7 +260,7 @@
 	min-height: (@icon-font-size * 2) + (@content-padding-large * 2) + ((@padding-base-vertical * 2) + @line-height-computed + 1);
 }
 
-// Loading icon
+// Loading facility
 .file-thumb-loading,
 .file-uploading {
 

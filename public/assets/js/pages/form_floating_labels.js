@@ -146,7 +146,7 @@ $(function() {
 
     // Basic example
     $(".touchspin-basic").TouchSpin({
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
 
@@ -178,7 +178,7 @@ $(function() {
     // Override defaults
     $.fn.selectpicker.defaults = {
         iconBase: '',
-        tickIcon: 'icon-checkmark3'
+        tickIcon: 'facility-checkmark3'
     }
 
 

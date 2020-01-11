@@ -8,6 +8,6 @@ class TimeSlot extends Model
 {
     protected $table = 'time_slot';
     protected $fillable = [
-        'timeSlot', 'fromTime', 'toTime'
+        'name', 'fromTime', 'toTime'
     ];
 }

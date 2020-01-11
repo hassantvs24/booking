@@ -128,16 +128,16 @@ $(function() {
 
     // Solid left
     $('#jgrowl-solid-styled-left').on('click', function () {
-        $.jGrowl('Solid color notification with left icon', {
-            header: 'Left icon',
+        $.jGrowl('Solid color notification with left facility', {
+            header: 'Left facility',
             theme: 'alert-styled-left bg-danger'
         });
     });
 
     // Solid right
     $('#jgrowl-solid-styled-right').on('click', function () {
-        $.jGrowl('Solid color notification with right icon', {
-            header: 'Right icon',
+        $.jGrowl('Solid color notification with right facility', {
+            header: 'Right facility',
             theme: 'alert-styled-right bg-info'
         });
     });
@@ -153,16 +153,16 @@ $(function() {
 
     // Styled left
     $('#jgrowl-styled-left').on('click', function () {
-        $.jGrowl('Notification with left contextual icon', {
-            header: 'Left icon',
+        $.jGrowl('Notification with left contextual facility', {
+            header: 'Left facility',
             theme: 'alert-bordered alert-styled-left alert-danger'
         });
     });
 
     // Styled right
     $('#jgrowl-styled-right').on('click', function () {
-        $.jGrowl('Notification with right contextual icon', {
-            header: 'Right icon',
+        $.jGrowl('Notification with right contextual facility', {
+            header: 'Right facility',
             theme: 'alert-bordered alert-styled-right alert-danger'
         });
     });

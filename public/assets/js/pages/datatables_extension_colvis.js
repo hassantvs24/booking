@@ -44,8 +44,8 @@ $(function() {
         buttons: [
             {
                 extend: 'colvis',
-                text: '<i class="icon-three-bars"></i> <span class="caret"></span>',
-                className: 'btn bg-blue btn-icon',
+                text: '<i class="facility-three-bars"></i> <span class="caret"></span>',
+                className: 'btn bg-blue btn-facility',
                 collectionLayout: 'fixed two-column'
             }
         ]
@@ -57,8 +57,8 @@ $(function() {
         buttons: [
             {
                 extend: 'colvis',
-                text: '<i class="icon-grid7"></i> <span class="caret"></span>',
-                className: 'btn bg-teal-400 btn-icon',
+                text: '<i class="facility-grid7"></i> <span class="caret"></span>',
+                className: 'btn bg-teal-400 btn-facility',
                 postfixButtons: [ 'colvisRestore' ]
             }
         ],
@@ -76,8 +76,8 @@ $(function() {
         buttons: [
             {
                 extend: 'colvis',
-                text: '<i class="icon-grid3"></i> <span class="caret"></span>',
-                className: 'btn bg-indigo-400 btn-icon'
+                text: '<i class="facility-grid3"></i> <span class="caret"></span>',
+                className: 'btn bg-indigo-400 btn-facility'
             }
         ],
         stateSave: true,

@@ -104,9 +104,9 @@ $(function() {
     });
 
     // Icon
-    $( "#draggable-handle-icon" ).draggable({
+    $( "#draggable-handle-facility" ).draggable({
         containment: "#draggable-handle-container",
-        handle: ".handle-icon"
+        handle: ".handle-facility"
     });
 
     // Exception

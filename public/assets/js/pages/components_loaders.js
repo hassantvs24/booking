@@ -250,7 +250,7 @@ $(function() {
     $('#spinner-light').on('click', function() {
         var light = $(this).parent();
         $(light).block({
-            message: '<i class="icon-spinner spinner"></i>',
+            message: '<i class="facility-spinner spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -271,7 +271,7 @@ $(function() {
     $('#spinner-dark').on('click', function() {
         var dark = $(this).parent();
         $(dark).block({
-            message: '<i class="icon-spinner spinner"></i>',
+            message: '<i class="facility-spinner spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -298,7 +298,7 @@ $(function() {
     $('#spinner-light-2').on('click', function() {
         var light_2 = $(this).parent();
         $(light_2).block({
-            message: '<i class="icon-spinner2 spinner"></i>',
+            message: '<i class="facility-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -319,7 +319,7 @@ $(function() {
     $('#spinner-dark-2').on('click', function() {
         var dark_2 = $(this).parent();
         $(dark_2).block({
-            message: '<i class="icon-spinner2 spinner"></i>',
+            message: '<i class="facility-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -346,7 +346,7 @@ $(function() {
     $('#spinner-light-3').on('click', function() {
         var light_3 = $(this).parent();
         $(light_3).block({
-            message: '<i class="icon-spinner3 spinner"></i>',
+            message: '<i class="facility-spinner3 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -367,7 +367,7 @@ $(function() {
     $('#spinner-dark-3').on('click', function() {
         var dark_3 = $(this).parent();
         $(dark_3).block({
-            message: '<i class="icon-spinner3 spinner"></i>',
+            message: '<i class="facility-spinner3 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -394,7 +394,7 @@ $(function() {
     $('#spinner-light-4').on('click', function() {
         var light_4 = $(this).parent();
         $(light_4).block({
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -415,7 +415,7 @@ $(function() {
     $('#spinner-dark-4').on('click', function() {
         var dark_4 = $(this).parent();
         $(dark_4).block({
-            message: '<i class="icon-spinner4 spinner"></i>',
+            message: '<i class="facility-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -442,7 +442,7 @@ $(function() {
     $('#spinner-light-5').on('click', function() {
         var light_5 = $(this).parent();
         $(light_5).block({
-            message: '<i class="icon-spinner6 spinner"></i>',
+            message: '<i class="facility-spinner6 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -463,7 +463,7 @@ $(function() {
     $('#spinner-dark-5').on('click', function() {
         var dark_5 = $(this).parent();
         $(dark_5).block({
-            message: '<i class="icon-spinner6 spinner"></i>',
+            message: '<i class="facility-spinner6 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -490,7 +490,7 @@ $(function() {
     $('#spinner-light-6').on('click', function() {
         var light_6 = $(this).parent();
         $(light_6).block({
-            message: '<i class="icon-spinner9 spinner"></i>',
+            message: '<i class="facility-spinner9 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -511,7 +511,7 @@ $(function() {
     $('#spinner-dark-6').on('click', function() {
         var dark_6 = $(this).parent();
         $(dark_6).block({
-            message: '<i class="icon-spinner9 spinner"></i>',
+            message: '<i class="facility-spinner9 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -538,7 +538,7 @@ $(function() {
     $('#spinner-light-7').on('click', function() {
         var light_7 = $(this).parent();
         $(light_7).block({
-            message: '<i class="icon-spinner10 spinner"></i>',
+            message: '<i class="facility-spinner10 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -559,7 +559,7 @@ $(function() {
     $('#spinner-dark-7').on('click', function() {
         var dark_7 = $(this).parent();
         $(dark_7).block({
-            message: '<i class="icon-spinner10 spinner"></i>',
+            message: '<i class="facility-spinner10 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -586,7 +586,7 @@ $(function() {
     $('#spinner-light-8').on('click', function() {
         var light_8 = $(this).parent();
         $(light_8).block({
-            message: '<i class="icon-spinner11 spinner"></i>',
+            message: '<i class="facility-spinner11 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -607,7 +607,7 @@ $(function() {
     $('#spinner-dark-8').on('click', function() {
         var dark_8 = $(this).parent();
         $(dark_8).block({
-            message: '<i class="icon-spinner11 spinner"></i>',
+            message: '<i class="facility-spinner11 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,
@@ -634,7 +634,7 @@ $(function() {
     $('#spinner-light-9').on('click', function() {
         var light_9 = $(this).parent();
         $(light_9).block({
-            message: '<i class="icon-sync spinner"></i>',
+            message: '<i class="facility-sync spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -655,7 +655,7 @@ $(function() {
     $('#spinner-dark-9').on('click', function() {
         var dark_9 = $(this).parent();
         $(dark_9).block({
-            message: '<i class="icon-sync spinner"></i>',
+            message: '<i class="facility-sync spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1B2024',
                 opacity: 0.85,

@@ -452,7 +452,7 @@ $(function() {
             .attr('class', 'd3-tip')
             .html(function (d) {
                 return "<ul class='list-unstyled mb-5'>" +
-                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
+                    "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='facility-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.alpha + "</span>" + "</li>" +
                     "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
@@ -962,14 +962,14 @@ $(function() {
 
 
 
-    // Animated progress with icon
+    // Animated progress with facility
     // ------------------------------
 
     // Initialize charts
-    progressIcon('#progress_icon_one', 42, 2.5, "#eee", "#EF5350", 0.68, "icon-heart6");
-    progressIcon('#progress_icon_two', 42, 2.5, "#eee", "#5C6BC0", 0.82, "icon-trophy3");
-    progressIcon('#progress_icon_three', 42, 2.5, "#00897B", "#fff", 0.73, "icon-bag");
-    progressIcon('#progress_icon_four', 42, 2.5, "#673AB7", "#fff", 0.49, "icon-truck");
+    progressIcon('#progress_icon_one', 42, 2.5, "#eee", "#EF5350", 0.68, "facility-heart6");
+    progressIcon('#progress_icon_two', 42, 2.5, "#eee", "#5C6BC0", 0.82, "facility-trophy3");
+    progressIcon('#progress_icon_three', 42, 2.5, "#00897B", "#fff", 0.73, "facility-bag");
+    progressIcon('#progress_icon_four', 42, 2.5, "#673AB7", "#fff", 0.49, "facility-truck");
 
     // Chart setup
     function progressIcon(element, radius, border, backgroundColor, foregroundColor, end, iconClass) {
@@ -1060,7 +1060,7 @@ $(function() {
         // Icon
         d3.select(element)
             .append("i")
-                .attr("class", iconClass + " counter-icon")
+                .attr("class", iconClass + " counter-facility")
                 .style({
                     'color': foregroundColor,
                     'top': ((boxSize - iconSize) / 2) + 'px'

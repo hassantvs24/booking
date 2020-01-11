@@ -41,7 +41,7 @@ $(function() {
     // File input
     $(".file-styled").uniform({
         fileButtonClass: 'action btn bg-pink-400',
-        fileButtonHtml: '<i class="icon-plus2"></i>'
+        fileButtonHtml: '<i class="facility-plus2"></i>'
     });
 
 

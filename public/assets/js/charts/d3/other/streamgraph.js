@@ -333,7 +333,7 @@ $(function () {
                         // Tooltip data
                         tooltip.html(
                             "<ul class='list-unstyled mb-5'>" +
-                                "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
+                                "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='facility-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
                                 "<li>" + "Visits: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
                                 "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
                             "</ul>"

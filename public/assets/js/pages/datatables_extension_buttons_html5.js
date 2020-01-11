@@ -51,7 +51,7 @@ $(function() {
         buttons: [
             {
                 extend: 'pdfHtml5',
-                text: 'Export to PDF <i class="icon-file-pdf position-right"></i>',
+                text: 'Export to PDF <i class="facility-file-pdf position-right"></i>',
                 className: 'btn bg-teal-400',
                 customize: function (doc) {
                     doc.content.splice(1, 0, {
@@ -93,8 +93,8 @@ $(function() {
                 },
                 {
                     extend: 'colvis',
-                    text: '<i class="icon-three-bars"></i> <span class="caret"></span>',
-                    className: 'btn bg-blue btn-icon'
+                    text: '<i class="facility-three-bars"></i> <span class="caret"></span>',
+                    className: 'btn bg-blue btn-facility'
                 }
             ]
         }
@@ -108,12 +108,12 @@ $(function() {
                 {
                     extend: 'copyHtml5',
                     className: 'btn btn-default',
-                    text: '<i class="icon-copy3 position-left"></i> Copy'
+                    text: '<i class="facility-copy3 position-left"></i> Copy'
                 },
                 {
                     extend: 'csvHtml5',
                     className: 'btn btn-default',
-                    text: '<i class="icon-file-spreadsheet position-left"></i> CSV',
+                    text: '<i class="facility-file-spreadsheet position-left"></i> CSV',
                     fieldSeparator: '\t',
                     extension: '.tsv'
                 }

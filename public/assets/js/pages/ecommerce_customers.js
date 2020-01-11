@@ -163,7 +163,7 @@ $(function() {
         buttons: [
             {
                 extend: 'pdfHtml5',
-                text: 'Export list <i class="icon-file-pdf position-right"></i>',
+                text: 'Export list <i class="facility-file-pdf position-right"></i>',
                 className: 'btn bg-blue',
                 orientation: 'landscape',
                 exportOptions: {

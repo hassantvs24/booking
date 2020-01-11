@@ -73,7 +73,7 @@ $(function() {
         };
 
 
-        // Shapes define the clickable region of the icon.
+        // Shapes define the clickable region of the facility.
         // The type defines an HTML &lt;area&gt; element 'poly' which
         // traces out a polygon as a series of X,Y points. The final
         // coordinate closes the poly by connecting to the first

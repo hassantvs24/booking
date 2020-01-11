@@ -9,6 +9,6 @@ class Services extends Model
     protected $table = 'services';
     protected $fillable = [
         'serviceType', 'name', 'locationID', 'lat', 'lon', 'minGuest', 'maxGuest', 'landmark', 'email', 'website',
-        'contact', 'pricing', 'facility', 'rules', 'additional', 'social', 'address', 'description', 'rating'
+        'photos', 'contact', 'pricing', 'facility', 'rules', 'additional', 'social', 'address', 'description', 'rating'
     ];
 }

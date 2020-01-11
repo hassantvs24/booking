@@ -37,11 +37,11 @@ $(function() {
     // Select2 with icons
     //
 
-    // Format icon
+    // Format facility
     function iconFormat(icon) {
         var originalOption = icon.element;
         if (!icon.id) { return icon.text; }
-        var $icon = "<i class='icon-" + $(icon.element).data('icon') + "'></i>" + icon.text;
+        var $icon = "<i class='facility-" + $(icon.element).data('icon') + "'></i>" + icon.text;
 
         return $icon;
     }
@@ -88,8 +88,8 @@ $(function() {
         '</div> ' +
         '</form>';
     $.fn.editableform.buttons = 
-        '<button type="submit" class="btn btn-info btn-icon editable-submit"><i class="icon-check"></i></button>' +
-        '<button type="button" class="btn btn-default btn-icon editable-cancel"><i class="icon-x"></i></button>';
+        '<button type="submit" class="btn btn-info btn-facility editable-submit"><i class="facility-check"></i></button>' +
+        '<button type="button" class="btn btn-default btn-facility editable-cancel"><i class="facility-x"></i></button>';
 
 
     // Initialize
@@ -195,11 +195,11 @@ $(function() {
     // Multiple files uploader
     $('.bootstrap-uploader').fileinput({
         browseLabel: 'Browse',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>'
+            icon: '<i class="facility-file-check"></i>'
         },
         initialCaption: "No file selected"
     });

@@ -16,11 +16,11 @@ $(function() {
     // ------------------------------
 
     // Title
-    var $title = $('.letter-icon-title'),
+    var $title = $('.letter-facility-title'),
         letter = $title.eq(0).text().charAt(0).toUpperCase();
 
     // Icon
-    var $icon = $title.parent().parent().find('.letter-icon');
+    var $icon = $title.parent().parent().find('.letter-facility');
         $icon.eq(0).text(letter);
 
 });

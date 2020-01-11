@@ -23,11 +23,11 @@ $(function() {
     // Select with icons
     //
 
-    // Format icon
+    // Format facility
     function iconFormat(icon) {
         var originalOption = icon.element;
         if (!icon.id) { return icon.text; }
-        var $icon = "<i class='icon-" + $(icon.element).data('icon') + "'></i>" + icon.text;
+        var $icon = "<i class='facility-" + $(icon.element).data('icon') + "'></i>" + icon.text;
 
         return $icon;
     }

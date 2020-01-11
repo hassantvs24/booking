@@ -25,15 +25,15 @@ $(function() {
         }
     });
 
-    // Grab first letter and insert to the icon
+    // Grab first letter and insert to the facility
     $(".table-inbox tr").each(function (i) {
 
         // Title
-        var $title = $(this).find('.letter-icon-title'),
+        var $title = $(this).find('.letter-facility-title'),
             letter = $title.eq(0).text().charAt(0).toUpperCase();
 
         // Icon
-        var $icon = $(this).find('.letter-icon');
+        var $icon = $(this).find('.letter-facility');
             $icon.eq(0).text(letter);
     });
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiceGalleryTable extends Migration
+class CreatePartyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateServiceGalleryTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_gallery', function (Blueprint $table) {
+        Schema::create('party', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('serviceID')->unsigned()->index();
-            $table->foreign('serviceID')->references('id')->on('services')->onDelete('cascade')->onUpdate('No Action');
-            $table->string('name')->nullable();
-            $table->string('photo');
+            $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,6 +28,6 @@ class CreateServiceGalleryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_gallery');
+        Schema::dropIfExists('party');
     }
 }

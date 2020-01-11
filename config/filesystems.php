@@ -43,6 +43,16 @@ return [
 
     'disks' => [
 
+        'facility' => [
+            'driver' => 'local',
+            'root' => public_path('facility'),
+        ],
+
+        'gallery' => [
+            'driver' => 'local',
+            'root' => public_path('gallery'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

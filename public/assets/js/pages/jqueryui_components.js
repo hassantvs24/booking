@@ -31,7 +31,7 @@ $(function() {
     .button({
         text: false,
         icons: {
-            primary: "icon-arrow-down22"
+            primary: "facility-arrow-down22"
         }
     }).click(function() {
         var menu = $( this ).parent().next().show().position({
@@ -51,45 +51,45 @@ $(function() {
     // With icons
     //
 
-    // Left icon
-    $('.jui-button-icon-left').button({
+    // Left facility
+    $('.jui-button-facility-left').button({
         icons: {
-            primary: "icon-twitter"
+            primary: "facility-twitter"
         }
     });
 
 
-    // Right icon
-    $('.jui-button-icon-right').button({
+    // Right facility
+    $('.jui-button-facility-right').button({
         icons: {
-            secondary: "icon-dribbble3"
+            secondary: "facility-dribbble3"
         }
     });
 
 
     // Left and right icons
-    $('.jui-button-icon-both').button({
+    $('.jui-button-facility-both').button({
         icons: {
-        primary: "icon-github4",
-            secondary: "icon-arrow-down22"
+        primary: "facility-github4",
+            secondary: "facility-arrow-down22"
         }
     });
 
 
     // Icons only
-    $('.jui-button-icon-both-only').button({
+    $('.jui-button-facility-both-only').button({
         icons: {
-            primary: "icon-github4",
-            secondary: "icon-arrow-down22"
+            primary: "facility-github4",
+            secondary: "facility-arrow-down22"
         },
         text: false
     });
 
 
-    // Single icon only
-    $('.jui-button-icon-only').button({
+    // Single facility only
+    $('.jui-button-facility-only').button({
         icons: {
-            primary: "icon-vimeo"
+            primary: "facility-vimeo"
         },
         text: false
     });
@@ -216,7 +216,7 @@ $(function() {
             {
                 text: 'Submit',
                 icons: {
-                    primary: 'icon-checkmark5'
+                    primary: 'facility-checkmark5'
                 },
                 click: function() {
                     $(this).dialog('close');
@@ -225,7 +225,7 @@ $(function() {
             {
                 text: 'Cancel',
                 icons: {
-                    primary: 'icon-cross3'
+                    primary: 'facility-cross3'
                 },
                 click: function() {
                     $(this).dialog('close');

@@ -71,8 +71,8 @@ $(function() {
         buttons: [
             {
                 extend: 'collection',
-                text: '<i class="icon-three-bars"></i> <span class="caret"></span>',
-                className: 'btn bg-blue btn-icon',
+                text: '<i class="facility-three-bars"></i> <span class="caret"></span>',
+                className: 'btn bg-blue btn-facility',
                 buttons: [
                     {
                         text: 'Toggle first name',

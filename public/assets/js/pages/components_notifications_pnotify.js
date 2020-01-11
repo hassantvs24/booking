@@ -24,7 +24,7 @@ $(function() {
         new PNotify({
             title: 'Primary notice',
             text: 'Check me out! I\'m a notice.',
-            icon: 'icon-warning22'
+            icon: 'facility-warning22'
         });
     });
 
@@ -32,7 +32,7 @@ $(function() {
     // Styled left
     $('#pnotify-styled-left').on('click', function () {
         new PNotify({
-            title: 'Left icon',
+            title: 'Left facility',
             text: 'Check me out! I\'m a notice.',
             addclass: 'alert alert-styled-left',
             type: 'info'
@@ -42,7 +42,7 @@ $(function() {
     // Styled right
     $('#pnotify-styled-right').on('click', function () {
         new PNotify({
-            title: 'Right icon',
+            title: 'Right facility',
             text: 'Check me out! I\'m a notice.',
             addclass: 'alert alert-warning alert-styled-right',
             type: 'error'
@@ -78,7 +78,7 @@ $(function() {
         new PNotify({
             title: 'Danger notice',
             text: 'Check me out! I\'m a notice.',
-            icon: 'icon-blocked',
+            icon: 'facility-blocked',
             type: 'error'
         });
     });
@@ -88,7 +88,7 @@ $(function() {
         new PNotify({
             title: 'Success notice',
             text: 'Check me out! I\'m a notice.',
-            icon: 'icon-checkmark3',
+            icon: 'facility-checkmark3',
             type: 'success'
         });
     });
@@ -98,7 +98,7 @@ $(function() {
         new PNotify({
             title: 'Info notice',
             text: 'Check me out! I\'m a notice.',
-            icon: 'icon-info22',
+            icon: 'facility-info22',
             type: 'info'
         });
     });
@@ -166,7 +166,7 @@ $(function() {
     // Solid styled left
     $('#pnotify-solid-styled-left').on('click', function () {
         new PNotify({
-            title: 'Left icon',
+            title: 'Left facility',
             text: 'Check me out! I\'m a notice.',
             addclass: 'alert bg-primary alert-styled-left'
         });
@@ -175,7 +175,7 @@ $(function() {
     // Solid styled right
     $('#pnotify-solid-styled-right').on('click', function () {
         new PNotify({
-            title: 'Right icon',
+            title: 'Right facility',
             text: 'Check me out! I\'m a notice.',
             addclass: 'alert bg-danger alert-styled-right',
             type: 'error'
@@ -294,8 +294,8 @@ $(function() {
     $('#pnotify-rich').on('click', function () {
         new PNotify({
             title: 'Rich content notice',
-            text: 'Look at my beautiful <strong>strong</strong>, <a href="#" class="alert-link">linked</a>, <em>emphasized</em>, and <u>underlined</u> text with <i class="icon-make-group"></i> icon.',
-            icon: 'icon-comment-discussion'
+            text: 'Look at my beautiful <strong>strong</strong>, <a href="#" class="alert-link">linked</a>, <em>emphasized</em>, and <u>underlined</u> text with <i class="facility-make-group"></i> facility.',
+            icon: 'facility-comment-discussion'
         });
     });
 
@@ -475,7 +475,7 @@ $(function() {
             notice.cancelRemove().update({
                 title: 'You\'ve chosen a side',
                 text: 'You want ' + $('<div/>').text(val).html() + '.',
-                icon: 'icon-checkmark3',
+                icon: 'facility-checkmark3',
                 type: 'success',
                 delay: 2000,
                 hide: true,
@@ -494,7 +494,7 @@ $(function() {
             notice.cancelRemove().update({
                 title: 'You don\'t want a side',
                 text: 'No soup for you!',
-                icon: 'icon-blocked',
+                icon: 'facility-blocked',
                 type: 'error',
                 delay: 2000,
                 hide: true,
@@ -546,7 +546,7 @@ $(function() {
             notice.cancelRemove().update({
                 title: 'Your poem',
                 text: $('<div/>').text(val).html(),
-                icon: 'icon-checkmark3',
+                icon: 'facility-checkmark3',
                 type: 'success',
                 hide: true,
                 confirm: {
@@ -564,7 +564,7 @@ $(function() {
             notice.cancelRemove().update({
                 title: 'You don\'t like poetry',
                 text: 'Roses are dead,\nViolets are dead,\nI suck at gardening.',
-                icon: 'icon-blocked',
+                icon: 'facility-blocked',
                 type: 'error',
                 hide: true,
                 confirm: {
@@ -596,7 +596,7 @@ $(function() {
                             notice.update({
                                 title: 'You\'ve chosen a side',
                                 text: 'You want fries.',
-                                icon: 'icon-checkmark3',
+                                icon: 'facility-checkmark3',
                                 type: 'success',
                                 hide: true,
                                 confirm: {
@@ -616,7 +616,7 @@ $(function() {
                             notice.update({
                                 title: 'You\'ve chosen a side',
                                 text: 'You want mashed potatoes.',
-                                icon: 'icon-checkmark3',
+                                icon: 'facility-checkmark3',
                                 type: 'info',
                                 hide: true,
                                 confirm: {
@@ -636,7 +636,7 @@ $(function() {
                             notice.update({
                                 title: 'You\'ve chosen a side',
                                 text: 'You want fruit.',
-                                icon: 'icon-checkmark3',
+                                icon: 'facility-checkmark3',
                                 type: 'info',
                                 hide: true,
                                 confirm: {
@@ -772,7 +772,7 @@ $(function() {
             </div>\
             </div>',
             addclass: 'bg-primary',
-            icon: 'icon-spinner4 spinner',
+            icon: 'facility-spinner4 spinner',
             hide: false,
             buttons: {
                 closer: false,
@@ -809,7 +809,7 @@ $(function() {
             text: "Please wait",
             addclass: 'bg-primary',
             type: 'info',
-            icon: 'icon-spinner4 spinner',
+            icon: 'facility-spinner4 spinner',
             hide: false,
             buttons: {
                 closer: false,
@@ -839,7 +839,7 @@ $(function() {
                     closer: true,
                     sticker: true
                 };
-                options.icon = 'icon-checkmark3';
+                options.icon = 'facility-checkmark3';
                 options.opacity = 1;
                 options.width = PNotify.prototype.options.width;
             }

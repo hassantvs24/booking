@@ -18,6 +18,8 @@ class CreateUserAccessTable extends Migration
             $table->bigInteger('userRuleID')->nullable()->unsigned()->index();
             $table->foreign('userRuleID')->references('id')->on('user_rules')->onDelete('cascade')->onUpdate('No Action');
             $table->string('name');
+            $table->string('access', 50);
+            $table->unique('userRuleID', 'access');
             $table->softDeletes();
             $table->timestamps();
         });

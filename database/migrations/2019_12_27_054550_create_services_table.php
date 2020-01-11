@@ -26,6 +26,7 @@ class CreateServicesTable extends Migration
             $table->string('landmark')->nullable();
             $table->string('email',150)->nullable();
             $table->string('website')->nullable();
+            $table->json('photos')->nullable();
             $table->json('contact')->nullable();
             $table->json('pricing')->nullable();
             $table->json('facility')->nullable();

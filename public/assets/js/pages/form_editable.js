@@ -31,8 +31,8 @@ $(function() {
 
     // Buttons
     $.fn.editableform.buttons = 
-        '<button type="submit" class="btn btn-primary btn-icon editable-submit"><i class="icon-check"></i></button>' +
-        '<button type="button" class="btn btn-default btn-icon editable-cancel"><i class="icon-x"></i></button>';
+        '<button type="submit" class="btn btn-primary btn-facility editable-submit"><i class="facility-check"></i></button>' +
+        '<button type="button" class="btn btn-default btn-facility editable-cancel"><i class="facility-x"></i></button>';
 
 
 
@@ -156,10 +156,10 @@ $(function() {
 
 
     // Icon variations
-    $('#icon-variation').editable();
-    $('#icon-variation').on('shown', function(e, editable) {
-        editable.input.$input.parents('.editable-input').parent().find('.editable-submit').children().removeClass('icon-check').addClass('icon-task');
-        editable.input.$input.parents('.editable-input').parent().find('.editable-cancel').children().removeClass('icon-x').addClass('icon-menu6');
+    $('#facility-variation').editable();
+    $('#facility-variation').on('shown', function(e, editable) {
+        editable.input.$input.parents('.editable-input').parent().find('.editable-submit').children().removeClass('facility-check').addClass('facility-task');
+        editable.input.$input.parents('.editable-input').parent().find('.editable-cancel').children().removeClass('facility-x').addClass('facility-menu6');
     });
 
 
@@ -237,7 +237,7 @@ $(function() {
     $('#input-group-addon').editable();
     $('#input-group-addon').on('shown', function (e, editable) {
         editable.input.$input.wrap('<div class="input-group"></div>');
-        $('<span class="input-group-addon"><i class="icon-mention"></i></span>').insertBefore(editable.input.$input);
+        $('<span class="input-group-addon"><i class="facility-mention"></i></span>').insertBefore(editable.input.$input);
     });
 
 
@@ -253,7 +253,7 @@ $(function() {
     $('#input-group-dropdown').editable();
     $('#input-group-dropdown').on('shown', function (e, editable) {
         editable.input.$input.wrap('<div class="input-group"></div>');
-        $('<div class="input-group-btn"><button type="button" class="btn btn-default btn-icon" data-toggle="dropdown"><i class="icon-cog5"></i> <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="#">Action</a></li> <li><a href="#">Another action</a></li> <li><a href="#">Something else here</a></li> </ul> </div>').insertBefore(editable.input.$input);
+        $('<div class="input-group-btn"><button type="button" class="btn btn-default btn-facility" data-toggle="dropdown"><i class="facility-cog5"></i> <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="#">Action</a></li> <li><a href="#">Another action</a></li> <li><a href="#">Something else here</a></li> </ul> </div>').insertBefore(editable.input.$input);
     });
 
 
@@ -406,7 +406,7 @@ $(function() {
     // Initialize uniform
     $(".styled, .multiselect-container input, .file-input > :file").uniform({
         radioClass: 'choice',
-        fileButtonHtml: '<i class="icon-googleplus"></i>'
+        fileButtonHtml: '<i class="facility-googleplus"></i>'
     });
 
 
@@ -883,8 +883,8 @@ $(function() {
     });
     $('#input-touchspin-advanced').on('shown', function(e, editable) {
         editable.input.$input.TouchSpin({
-            prefix: '<i class="icon-accessibility"></i>',
-            postfix: '<i class="icon-paragraph-justify2"></i>'
+            prefix: '<i class="facility-accessibility"></i>',
+            postfix: '<i class="facility-paragraph-justify2"></i>'
         }).parent().parent().addClass('editable-touchspin');
     });
 

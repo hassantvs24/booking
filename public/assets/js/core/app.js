@@ -54,8 +54,8 @@ $(function() {
     // -------------------------
 
     // Add control button toggler to page and panel headers if have heading elements
-    $('.panel-footer').has('> .heading-elements:not(.not-collapsible)').prepend('<a class="heading-elements-toggle"><i class="icon-more"></i></a>');
-    $('.page-title, .panel-title').parent().has('> .heading-elements:not(.not-collapsible)').children('.page-title, .panel-title').append('<a class="heading-elements-toggle"><i class="icon-more"></i></a>');
+    $('.panel-footer').has('> .heading-elements:not(.not-collapsible)').prepend('<a class="heading-elements-toggle"><i class="facility-more"></i></a>');
+    $('.page-title, .panel-title').parent().has('> .heading-elements:not(.not-collapsible)').children('.page-title, .panel-title').append('<a class="heading-elements-toggle"><i class="facility-more"></i></a>');
 
 
     // Toggle visible state of heading elements
@@ -72,7 +72,7 @@ $(function() {
     // -------------------------
 
     // Add control button toggler to breadcrumbs if has elements
-    $('.breadcrumb-line').has('.breadcrumb-elements').prepend('<a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a>');
+    $('.breadcrumb-line').has('.breadcrumb-elements').prepend('<a class="breadcrumb-elements-toggle"><i class="facility-menu-open"></i></a>');
 
 
     // Toggle visible state of breadcrumb elements
@@ -127,7 +127,7 @@ $(function() {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent().parent();
         $(block).block({ 
-            message: '<i class="icon-spinner2 spinner"></i>',
+            message: '<i class="facility-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -153,7 +153,7 @@ $(function() {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent();
         $(block).block({ 
-            message: '<i class="icon-spinner2 spinner"></i>',
+            message: '<i class="facility-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#000',
                 opacity: 0.5,
@@ -180,7 +180,7 @@ $(function() {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent();
         $(block).block({ 
-            message: '<i class="icon-spinner2 spinner"></i>',
+            message: '<i class="facility-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
                 opacity: 0.8,
@@ -213,7 +213,7 @@ $(function() {
     $('.category-collapsed').children('.category-content').hide();
 
 
-    // Rotate icon if collapsed by default
+    // Rotate facility if collapsed by default
     $('.category-collapsed').find('[data-action=collapse]').addClass('rotate-180');
 
 
@@ -238,7 +238,7 @@ $(function() {
     $('.panel-collapsed').children('.panel-heading').nextAll().hide();
 
 
-    // Rotate icon if collapsed by default
+    // Rotate facility if collapsed by default
     $('.panel-collapsed').find('[data-action=collapse]').addClass('rotate-180');
 
 

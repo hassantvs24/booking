@@ -47,7 +47,7 @@ $(function() {
 
     // Basic example
     $(".touchspin-basic").TouchSpin({
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
 
@@ -103,8 +103,8 @@ $(function() {
     // Vertical spinners
     $(".touchspin-vertical").TouchSpin({
         verticalbuttons: true,
-        verticalupclass: 'icon-arrow-up22',
-        verticaldownclass: 'icon-arrow-down22'
+        verticalupclass: 'facility-arrow-up22',
+        verticaldownclass: 'facility-arrow-down22'
     });
 
 
@@ -118,48 +118,48 @@ $(function() {
 
     // Default
     $(".touchspin-addon-default").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
     // Primary
     $(".touchspin-addon-primary").TouchSpin({
         prefix_extraclass: 'input-group-addon-primary',
         postfix_extraclass: 'input-group-addon-primary',
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
     // Danger
     $(".touchspin-addon-danger").TouchSpin({
         prefix_extraclass: 'input-group-addon-danger',
         postfix_extraclass: 'input-group-addon-danger',
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
     // Success
     $(".touchspin-addon-success").TouchSpin({
         prefix_extraclass: 'input-group-addon-success',
         postfix_extraclass: 'input-group-addon-success',
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
     // Warning
     $(".touchspin-addon-warning").TouchSpin({
         prefix_extraclass: 'input-group-addon-warning',
         postfix_extraclass: 'input-group-addon-warning',
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
     // Info
     $(".touchspin-addon-info").TouchSpin({
         prefix_extraclass: 'input-group-addon-info',
         postfix_extraclass: 'input-group-addon-info',
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>'
     });
 
 
@@ -169,48 +169,48 @@ $(function() {
 
     // Default
     $(".touchspin-button-default").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-default",
         buttonup_class: "btn btn-default"
     });
 
     // Primary
     $(".touchspin-button-primary").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-primary",
         buttonup_class: "btn btn-primary"
     });
 
     // Danger
     $(".touchspin-button-danger").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-danger",
         buttonup_class: "btn btn-danger"
     });
 
     // Success
     $(".touchspin-button-success").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-success",
         buttonup_class: "btn btn-success"
     });
 
     // Warning
     $(".touchspin-button-warning").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-warning",
         buttonup_class: "btn btn-warning"
     });
 
     // Info
     $(".touchspin-button-info").TouchSpin({
-        prefix: '<i class="icon-accessibility"></i>',
-        postfix: '<i class="icon-paragraph-justify2"></i>',
+        prefix: '<i class="facility-accessibility"></i>',
+        postfix: '<i class="facility-paragraph-justify2"></i>',
         buttondown_class: "btn btn-info",
         buttonup_class: "btn btn-info"
     });

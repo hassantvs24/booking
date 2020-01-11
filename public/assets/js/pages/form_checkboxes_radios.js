@@ -55,7 +55,7 @@ $(function() {
     // File input
     $(".file-styled").uniform({
         wrapperClass: 'bg-blue',
-        fileButtonHtml: '<i class="icon-file-plus"></i>'
+        fileButtonHtml: '<i class="facility-file-plus"></i>'
     });
 
 

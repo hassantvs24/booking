@@ -396,12 +396,12 @@ input[type="checkbox"] {
     padding-right: (@input-height-base * 1.25);
   }
 }
-// Feedback icon (requires .glyphicon classes)
+// Feedback facility (requires .glyphicon classes)
 .form-control-feedback {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2; // Ensure icon is above input groups
+  z-index: 2; // Ensure facility is above input groups
   display: block;
   width: @input-height-base;
   height: @input-height-base;
@@ -435,7 +435,7 @@ input[type="checkbox"] {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
 
-// Reposition feedback icon if input has visible label above
+// Reposition feedback facility if input has visible label above
 .has-feedback label {
 
   & ~ .form-control-feedback {
@@ -534,7 +534,7 @@ input[type="checkbox"] {
       margin-left: 0;
     }
 
-    // Re-override the feedback icon.
+    // Re-override the feedback facility.
     .has-feedback .form-control-feedback {
       top: 0;
     }
@@ -584,7 +584,7 @@ input[type="checkbox"] {
 
   // Validation states
   //
-  // Reposition the icon because it's now within a grid column and columns have
+  // Reposition the facility because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
   .has-feedback .form-control-feedback {
     right: floor((@grid-gutter-width / 2));

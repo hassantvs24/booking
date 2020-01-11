@@ -40,7 +40,7 @@ $(function() {
     $('.context-dynamic').contextmenu({
         target: '.context-dynamic-menu',
         before: function(e) { 
-            this.getMenu().find('li').eq(2).find('a').html('<i class="icon-stack"></i> Item has been changed');
+            this.getMenu().find('li').eq(2).find('a').html('<i class="facility-stack"></i> Item has been changed');
             return true;
         }
     });

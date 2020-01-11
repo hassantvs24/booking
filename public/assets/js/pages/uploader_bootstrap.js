@@ -31,34 +31,34 @@ $(function() {
 
     // Buttons inside zoom modal
     var previewZoomButtonClasses = {
-        toggleheader: 'btn btn-default btn-icon btn-xs btn-header-toggle',
-        fullscreen: 'btn btn-default btn-icon btn-xs',
-        borderless: 'btn btn-default btn-icon btn-xs',
-        close: 'btn btn-default btn-icon btn-xs'
+        toggleheader: 'btn btn-default btn-facility btn-xs btn-header-toggle',
+        fullscreen: 'btn btn-default btn-facility btn-xs',
+        borderless: 'btn btn-default btn-facility btn-xs',
+        close: 'btn btn-default btn-facility btn-xs'
     };
 
     // Icons inside zoom modal classes
     var previewZoomButtonIcons = {
-        prev: '<i class="icon-arrow-left32"></i>',
-        next: '<i class="icon-arrow-right32"></i>',
-        toggleheader: '<i class="icon-menu-open"></i>',
-        fullscreen: '<i class="icon-screen-full"></i>',
-        borderless: '<i class="icon-alignment-unalign"></i>',
-        close: '<i class="icon-cross3"></i>'
+        prev: '<i class="facility-arrow-left32"></i>',
+        next: '<i class="facility-arrow-right32"></i>',
+        toggleheader: '<i class="facility-menu-open"></i>',
+        fullscreen: '<i class="facility-screen-full"></i>',
+        borderless: '<i class="facility-alignment-unalign"></i>',
+        close: '<i class="facility-cross3"></i>'
     };
 
     // File actions
     var fileActionSettings = {
-        zoomClass: 'btn btn-link btn-xs btn-icon',
-        zoomIcon: '<i class="icon-zoomin3"></i>',
-        dragClass: 'btn btn-link btn-xs btn-icon',
-        dragIcon: '<i class="icon-three-bars"></i>',
-        removeClass: 'btn btn-link btn-icon btn-xs',
-        removeIcon: '<i class="icon-trash"></i>',
-        indicatorNew: '<i class="icon-file-plus text-slate"></i>',
-        indicatorSuccess: '<i class="icon-checkmark3 file-icon-large text-success"></i>',
-        indicatorError: '<i class="icon-cross2 text-danger"></i>',
-        indicatorLoading: '<i class="icon-spinner2 spinner text-muted"></i>'
+        zoomClass: 'btn btn-link btn-xs btn-facility',
+        zoomIcon: '<i class="facility-zoomin3"></i>',
+        dragClass: 'btn btn-link btn-xs btn-facility',
+        dragIcon: '<i class="facility-three-bars"></i>',
+        removeClass: 'btn btn-link btn-facility btn-xs',
+        removeIcon: '<i class="facility-trash"></i>',
+        indicatorNew: '<i class="facility-file-plus text-slate"></i>',
+        indicatorSuccess: '<i class="facility-checkmark3 file-facility-large text-success"></i>',
+        indicatorError: '<i class="facility-cross2 text-danger"></i>',
+        indicatorLoading: '<i class="facility-spinner2 spinner text-muted"></i>'
     };
 
 
@@ -68,11 +68,11 @@ $(function() {
 
     $('.file-input').fileinput({
         browseLabel: 'Browse',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         initialCaption: "No file selected",
@@ -90,14 +90,14 @@ $(function() {
         previewFileType: 'image',
         browseLabel: 'Select',
         browseClass: 'btn bg-slate-700',
-        browseIcon: '<i class="icon-image2 position-left"></i> ',
+        browseIcon: '<i class="facility-image2 position-left"></i> ',
         removeLabel: 'Remove',
         removeClass: 'btn btn-danger',
-        removeIcon: '<i class="icon-cancel-square position-left"></i> ',
+        removeIcon: '<i class="facility-cancel-square position-left"></i> ',
         uploadClass: 'btn bg-teal-400',
-        uploadIcon: '<i class="icon-file-upload position-left"></i> ',
+        uploadIcon: '<i class="facility-file-upload position-left"></i> ',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         initialCaption: "Please select image",
@@ -117,11 +117,11 @@ $(function() {
         browseClass: 'btn btn-default',
         removeClass: 'btn btn-default',
         uploadClass: 'btn bg-success-400',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             main1: "{preview}\n" +
                 "<div class='input-group {class}'>\n" +
                 "   <div class='input-group-btn'>\n" +
@@ -150,11 +150,11 @@ $(function() {
         browseLabel: 'Browse',
         browseClass: 'btn btn-primary',
         uploadClass: 'btn btn-default',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         maxFilesNum: 10,
@@ -172,11 +172,11 @@ $(function() {
 
     $(".file-input-preview").fileinput({
         browseLabel: 'Browse',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         initialPreview: [
@@ -202,11 +202,11 @@ $(function() {
 
     $(".file-input-overwrite").fileinput({
         browseLabel: 'Browse',
-        browseIcon: '<i class="icon-file-plus"></i>',
-        uploadIcon: '<i class="icon-file-upload2"></i>',
-        removeIcon: '<i class="icon-cross3"></i>',
+        browseIcon: '<i class="facility-file-plus"></i>',
+        uploadIcon: '<i class="facility-file-upload2"></i>',
+        removeIcon: '<i class="facility-cross3"></i>',
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         initialPreview: [
@@ -235,19 +235,19 @@ $(function() {
         maxFileCount: 5,
         initialPreview: [],
         fileActionSettings: {
-            removeIcon: '<i class="icon-bin"></i>',
-            removeClass: 'btn btn-link btn-xs btn-icon',
-            uploadIcon: '<i class="icon-upload"></i>',
-            uploadClass: 'btn btn-link btn-xs btn-icon',
-            zoomIcon: '<i class="icon-zoomin3"></i>',
-            zoomClass: 'btn btn-link btn-xs btn-icon',
-            indicatorNew: '<i class="icon-file-plus text-slate"></i>',
-            indicatorSuccess: '<i class="icon-checkmark3 file-icon-large text-success"></i>',
-            indicatorError: '<i class="icon-cross2 text-danger"></i>',
-            indicatorLoading: '<i class="icon-spinner2 spinner text-muted"></i>',
+            removeIcon: '<i class="facility-bin"></i>',
+            removeClass: 'btn btn-link btn-xs btn-facility',
+            uploadIcon: '<i class="facility-upload"></i>',
+            uploadClass: 'btn btn-link btn-xs btn-facility',
+            zoomIcon: '<i class="facility-zoomin3"></i>',
+            zoomClass: 'btn btn-link btn-xs btn-facility',
+            indicatorNew: '<i class="facility-file-plus text-slate"></i>',
+            indicatorSuccess: '<i class="facility-checkmark3 file-facility-large text-success"></i>',
+            indicatorError: '<i class="facility-cross2 text-danger"></i>',
+            indicatorLoading: '<i class="facility-spinner2 spinner text-muted"></i>',
         },
         layoutTemplates: {
-            icon: '<i class="icon-file-check"></i>',
+            icon: '<i class="facility-file-check"></i>',
             modal: modalTemplate
         },
         initialCaption: "No file selected",
