@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Service;
 use App\Facility;
 use App\Http\Controllers\Controller;
 use App\Location;
+use App\Party;
 use App\Rules;
 use App\Services;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ class ServiceController extends Controller
         $table = Services::orderBy('id', 'DESC')->get();
         $location = Location::orderBy('name', 'ASC')->get();
         $facility = Facility::orderBy('name', 'ASC')->get();
+
         $rules = Rules::orderBy('rulesFor', 'ASC')->orderBy('name', 'ASC')->get();
         return view('service.service')->with(['table' => $table, 'location' => $location, 'facility' => $facility, 'rules' => $rules]);
     }
@@ -28,7 +30,8 @@ class ServiceController extends Controller
         $location = Location::orderBy('name', 'ASC')->get();
         $facility = Facility::orderBy('name', 'ASC')->get();
         $rules = Rules::orderBy('rulesFor', 'ASC')->orderBy('name', 'ASC')->get();
-        return view('service.action.save')->with(['location' => $location, 'facility' => $facility, 'rules' => $rules]);
+        $partyType = Party::orderBy('name', 'ASC')->get();
+        return view('service.action.save')->with(['location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
     }
 
     public function go_edit($id){
@@ -36,7 +39,8 @@ class ServiceController extends Controller
         $location = Location::orderBy('name', 'ASC')->get();
         $facility = Facility::orderBy('name', 'ASC')->get();
         $rules = Rules::orderBy('rulesFor', 'ASC')->orderBy('name', 'ASC')->get();
-        return view('service.action.edit')->with(['table' => $table, 'location' => $location, 'facility' => $facility, 'rules' => $rules]);
+        $partyType = Party::orderBy('name', 'ASC')->get();
+        return view('service.action.edit')->with(['table' => $table, 'location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
     }
 
     public function save(Request $request){
@@ -44,6 +48,7 @@ class ServiceController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191|min:2',
+            'additional' => 'max:255',
             'mobile' => 'required|max:11|min:11',
             'email' => 'nullable|email',
             'locationID' => 'required|numeric',
@@ -63,6 +68,11 @@ class ServiceController extends Controller
 
             $packages = $request->package ?? [];
             $price = $request->price ?? [];
+            $items = $request->items ?? [];
+
+            $questions = $request->question ?? [];
+            $answers = $request->answer ?? [];
+
 
             $photoName = $request->photoName ?? [];
 
@@ -72,11 +82,26 @@ class ServiceController extends Controller
             $location = Location::find($request->locationID);
 
             $contact = collect([
-                'mobile' => $request->mobile ?? 0,
-                'phone' => $request->phone ?? 0,
-                'whatsApp' => $request->WhatsApp ?? 0,
-                'viber' => $request->Viber ?? 0
+                'mobile' => $request->mobile ?? '',
+                'phone' => $request->phone ?? '',
+                'whatsApp' => $request->WhatsApp ?? '',
+                'viber' => $request->Viber ?? ''
             ]);
+
+
+            $faqDatas = [];
+            $faqData = [];
+            foreach ($questions as $x => $question){
+                $faqData['question'] = $question;
+                $faqData['answer'] = $answers[$x];
+                $faqDatas[] = $faqData;
+            }
+
+            $additional_arr = collect(['description' => $request->additional]);
+            $additional_arrs = $additional_arr->put('partyType', $request->partyType);
+            $additional_arrs2 = $additional_arrs->put('faq', $faqDatas);
+            $additional = $additional_arrs2->toJson();
+
 
             $dbContact = $contact->toJson();//($contact->count() > 0 ? $contact->toJson() : [] );
 
@@ -91,6 +116,7 @@ class ServiceController extends Controller
             $priceData = [];
             foreach ($packages as $i => $package){
                 $priceData['name'] = $package;
+                $priceData['item'] = $items[$i];
                 $priceData['price'] = $price[$i];
 
                 $priceDatas[] = $priceData;
@@ -118,7 +144,7 @@ class ServiceController extends Controller
 
                 $extension = $request->file('primaryPhoto')->extension();
 
-                //############ 512x512 ###########
+                //############ 1170x780 ###########
                 $fileName = 'profile_'.md5(date('d-m-y H:i:s')).'.'.$extension;
                 $photo = Image::make($request->file('primaryPhoto'));
                 $photo->resize(512, 512, function ($constraint) {
@@ -128,7 +154,7 @@ class ServiceController extends Controller
                 $photo_main = $photo->stream($extension);
 
                 Storage::disk('gallery')->put($fileName, $photo_main->__toString());
-                //############ 512x512 ###########
+                //############ 1170x780 ###########
 
                 $photoData['photo'] = $fileName;
 
@@ -140,17 +166,17 @@ class ServiceController extends Controller
                 foreach($request->file('gallery') as $k => $file)
                 {
                     $extension = $file->extension();
-                    //############ 512x512 ###########
+                    //############ 1170x780 ###########
                     $fileName = 'gallery_'.$k.md5(date('d-m-y H:i:s')).'.'.$extension;
                     $photo = Image::make($file);
-                    $photo->resize(512, 512, function ($constraint) {
+                    $photo->resize(1170, 780, function ($constraint) {
                         $constraint->aspectRatio();
                     });
-                    $photo->resizeCanvas(512, 512, 'center', false, 'rgba(255, 255, 255, 0)');
+                    $photo->resizeCanvas(1170, 780, 'center', false, 'rgba(255, 255, 255, 0)');
                     $photo_main = $photo->stream($extension);
 
                     Storage::disk('gallery')->put($fileName, $photo_main->__toString());
-                    //############ 512x512 ###########
+                    //############ 1170x780 ###########
 
                     $photoData['name'] = $photoName[$k];
                     $photoData['photo'] = $fileName;
@@ -167,13 +193,14 @@ class ServiceController extends Controller
             $table->name = $request->name;
             $table->email = $request->email;
             $table->locationID = $request->locationID;
-            $table->lat = $location->lat ?? 0;
-            $table->lon = $location->lon ?? 0;
+            $table->lat = $location->lat ?? '23.78';
+            $table->lon = $location->lon ?? '90.40';
             $table->address = $request->address;
             $table->landmark = $request->landmark;
             $table->minGuest = $request->minGuest;
             $table->maxGuest = $request->maxGuest;
             $table->website = $request->website;
+            $table->additional = $additional;
             $table->contact = $dbContact;
             $table->pricing = $dbPrice;
             $table->facility = $dbFacility;
@@ -197,6 +224,7 @@ class ServiceController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191|min:2',
+            'additional' => 'max:255',
             'mobile' => 'required|max:11|min:11',
             'email' => 'nullable|email',
             'locationID' => 'required|numeric',
@@ -221,6 +249,10 @@ class ServiceController extends Controller
 
         $packages = $request->package ?? [];
         $price = $request->price ?? [];
+        $items = $request->items ?? [];
+
+        $questions = $request->question ?? [];
+        $answers = $request->answer ?? [];
 
         $photoName = $request->photoName ?? [];
 
@@ -230,11 +262,25 @@ class ServiceController extends Controller
         $location = Location::find($request->locationID);
 
         $contact = collect([
-            'mobile' => $request->mobile ?? 0,
-            'phone' => $request->phone ?? 0,
-            'whatsApp' => $request->WhatsApp ?? 0,
-            'viber' => $request->Viber ?? 0
+            'mobile' => $request->mobile ?? '',
+            'phone' => $request->phone ?? '',
+            'whatsApp' => $request->WhatsApp ?? '',
+            'viber' => $request->Viber ?? ''
         ]);
+
+        $faqDatas = [];
+        $faqData = [];
+        foreach ($questions as $x => $question){
+            $faqData['question'] = $question;
+            $faqData['answer'] = $answers[$x];
+            $faqDatas[] = $faqData;
+        }
+
+
+        $additional_arr = collect(['description' => $request->additional]);
+        $additional_arrs = $additional_arr->put('partyType', $request->partyType);
+        $additional_arrs2 = $additional_arrs->put('faq', $faqDatas);
+        $additional = $additional_arrs2->toJson();
 
         $dbContact = $contact->toJson();//($contact->count() > 0 ? $contact->toJson() : [] );
 
@@ -249,6 +295,7 @@ class ServiceController extends Controller
         $priceData = [];
         foreach ($packages as $i => $package){
             $priceData['name'] = $package;
+            $priceData['item'] = $items[$i];
             $priceData['price'] = $price[$i];
 
             $priceDatas[] = $priceData;
@@ -305,17 +352,17 @@ class ServiceController extends Controller
             foreach($request->file('gallery') as $k => $file)
             {
                 $extension = $file->extension();
-                //############ 512x512 ###########
+                //############ 1170x780 ###########
                 $fileName = 'gallery_'.$k.md5(date('d-m-y H:i:s')).'.'.$extension;
                 $photo = Image::make($file);
-                $photo->resize(512, 512, function ($constraint) {
+                $photo->resize(1170, 780, function ($constraint) {
                     $constraint->aspectRatio();
                 });
-                $photo->resizeCanvas(512, 512, 'center', false, 'rgba(255, 255, 255, 0)');
+                $photo->resizeCanvas(1170, 780, 'center', false, 'rgba(255, 255, 255, 0)');
                 $photo_main = $photo->stream($extension);
 
                 Storage::disk('gallery')->put($fileName, $photo_main->__toString());
-                //############ 512x512 ###########
+                //############ 1170x780 ###########
 
                 $photoData['name'] = $photoName[$k];
                 $photoData['photo'] = $fileName;
@@ -332,13 +379,14 @@ class ServiceController extends Controller
         $table->name = $request->name;
         $table->email = $request->email;
         $table->locationID = $request->locationID;
-        $table->lat = $location->lat ?? 0;
-        $table->lon = $location->lon ?? 0;
+        $table->lat = $location->lat ?? '23.78';
+        $table->lon = $location->lon ?? '90.40';
         $table->address = $request->address;
         $table->landmark = $request->landmark;
         $table->minGuest = $request->minGuest;
         $table->maxGuest = $request->maxGuest;
         $table->website = $request->website;
+        $table->additional = $additional;
         $table->contact = $dbContact;
         $table->pricing = $dbPrice;
         $table->facility = $dbFacility;

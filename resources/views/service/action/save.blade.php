@@ -105,6 +105,11 @@
                                     </div>
 
                                     <div class="input-group mb-5">
+                                        <span class="input-group-addon">Short Description</span>
+                                        <input type="text" name="additional" class="form-control" placeholder="Max 255 letter Short Description [Optional]" value="{{old('additional')}}" />
+                                    </div>
+
+                                    <div class="input-group mb-5">
                                         <span class="input-group-addon">Profile Photo*</span>
                                         <input type="file" name="primaryPhoto" class="form-control" placeholder="Profile Photo" accept="image/x-png,image/gif,image/jpeg" required/>
                                     </div>
@@ -115,6 +120,15 @@
                             <div class="col-md-6">
                                 <fieldset>
                                     <legend class="text-semibold"><i class="icon-truck position-left"></i> Other details</legend>
+
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon">Party Type</span>
+                                        <select class="form-control select" name="partyType[]" multiple="multiple">
+                                            @foreach($partyTypes as $row)
+                                                <option value="{{$row->id}}">{{$row->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Facility</span>
@@ -140,6 +154,9 @@
 
                                     <div class="mb-5"><button id="addPackage" type="button" class="btn btn-link"><i class="icon-plus2"></i> Add Package and pricing setup</button></div>
                                     <div id="packageShow"></div>
+
+                                    <div class="mb-5"><button id="addFaq" type="button" class="btn btn-link"><i class="icon-plus2"></i> Add FAQ</button></div>
+                                    <div id="faqShow"></div>
 
                                     <div class="mb-5"><button id="addPhoto" type="button" class="btn btn-link"><i class="icon-plus2"></i> Add Photo Gallery</button></div>
                                     <div id="photoShow"></div>
@@ -208,11 +225,32 @@
             });
 
 
+            $('#addFaq').click(function () {
+
+                $('#faqShow').append('<div class="input-group mb-5 gnInput">\n' +
+                    ' <span class="input-group-addon">Question</span>\n' +
+                    ' <input type="text" name="question[]" class="form-control" placeholder="FAQ Question" required/>\n' +
+                    ' <span class="input-group-addon">Answer</span>\n' +
+                    ' <input type="text" name="answer[]" class="form-control" placeholder="Answer This" required/>\n' +
+                    ' <span class="input-group-btn">\n' +
+                    '   <button class="btn btn-danger delInput" type="button">X</button>\n' +
+                    '  </span>\n' +
+                    '</div>');
+
+                $('.delInput').click(function () {
+                    $(this).parents('.gnInput').remove();
+                });
+            });
+
+
+
             $('#addPackage').click(function () {
 
                 $('#packageShow').append('<div class="input-group mb-5 gnInput">\n' +
                     ' <span class="input-group-addon">Package Name</span>\n' +
                     ' <input type="text" name="package[]" class="form-control" placeholder="Package Name" required/>\n' +
+                    ' <span class="input-group-addon">Item</span>\n' +
+                    ' <input type="text" name="items[]" class="form-control" placeholder="Package Item" required/>\n' +
                     ' <span class="input-group-addon">Price</span>\n' +
                     ' <input type="number" name="price[]" class="form-control" min="0" value="0" placeholder="Package Price" required/>\n' +
                     ' <span class="input-group-btn">\n' +

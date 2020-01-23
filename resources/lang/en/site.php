@@ -4,6 +4,11 @@ return [
     'aside' => [
         'dashboard' => 'Dashboard',
 
+        'booking' => 'Booking',
+        'new_booking' => 'New Booking',
+        'booking_task' => 'Booking Task',
+        'booking_archive' => 'Old Booking',
+
         'service' => 'Services',
         'service_list' => 'Service List',
         'service_new' => 'New Service',
@@ -23,7 +28,10 @@ return [
 
     'common' => [
         'edi_title' => 'Edit This',
+        'view_title' => 'View This',
         'del_title' => 'Delete This',
+        'cancel_title' => 'Cancel This',
+        'approve_title' => 'Approve This',
 
         'delete' => 'Are you sure to delete this?',
 
@@ -40,6 +48,17 @@ return [
     'content' => [
         'dashboard_title' => 'Dashboard',
         'dashboard_page' => 'Dashboard',
+
+        'booking_title' => 'New Booking',
+        'booking_page' => 'New Booking',
+
+        'booking_task_title' => 'Booking Task',
+        'booking_task_page' => 'Booking Task',
+        'booking_task_approved' => 'Approved Booking Task',
+        'booking_task_cancel' => 'Cancel Booking Task',
+
+        'old_booking_title' => 'Old Booking',
+        'old_booking_page' => 'Old Booking',
 
         'service_title' => 'Service',
         'service_page' => 'All Service',

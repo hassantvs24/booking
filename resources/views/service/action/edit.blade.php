@@ -38,7 +38,7 @@
 
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Service Type</span>
-                                        <select type="text" name="serviceType" class="form-control">
+                                        <select type="text" id="venueBooking" name="serviceType" class="form-control">
                                             <option value="Venue Booking">Venue Booking</option>
                                             <option value="Food & Catering">Food & Catering</option>
                                             <option value="Photographer">Photographer</option>
@@ -61,7 +61,7 @@
 
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Location*</span>
-                                        <select type="text" name="locationID" class="form-control">
+                                        <select id="locationSet" type="text" name="locationID" class="form-control">
                                             @foreach($location as $row)
                                                 <option value="{{$row->id}}">{{$row->name}}</option>
                                             @endforeach
@@ -87,12 +87,17 @@
 
                                     @php
                                         $contact = json_decode($table->contact, true);
-                                       // dd($table->facility);
+
+                                        $additional = json_decode($table->additional, true);
+                                        $partyType_json = $additional['partyType'];
+                                        $faq_json = $additional['faq'];
+
+                                        //dd($partyType_json);
+
 
                                        $facility_json = json_decode($table->facility, true);
                                        $rules_json = json_decode($table->rules, true);
 
-                                      // dd($facility_json);
 
                                         $facil = "";
                                         foreach ($facility_json as $val){
@@ -105,6 +110,18 @@
                                             $ru .= str_replace('"', '',$val).',';
                                         }
                                         $ruleses = rtrim($ru, ',');
+
+                                        $partyType = "";
+                                        if($partyType_json != null){
+                                            $party = "";
+                                            foreach ($partyType_json as $val){
+                                                $party .= str_replace('"', '',$val).',';
+                                            }
+                                            $partyType = rtrim($party, ',');
+                                        }
+
+
+
 
 
                                         $social = json_decode($table->social, true);
@@ -133,6 +150,11 @@
                                     </div>
 
                                     <div class="input-group mb-5">
+                                        <span class="input-group-addon">Short Description</span>
+                                        <input type="text" name="additional" class="form-control" placeholder="Max 255 letter Short Description [Optional]" value="{{$additional['description'] ?? ''}}" />
+                                    </div>
+
+                                    <div class="input-group mb-5">
                                         <span class="input-group-addon">Profile Photo*</span>
                                         <input type="file" name="primaryPhoto" class="form-control" placeholder="Profile Photo" accept="image/x-png,image/gif,image/jpeg"/>
                                     </div>
@@ -143,6 +165,15 @@
                             <div class="col-md-6">
                                 <fieldset>
                                     <legend class="text-semibold"><i class="icon-truck position-left"></i> Other details</legend>
+
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon">Party Type</span>
+                                        <select  id="partyTypes"class="form-control select" name="partyType[]" multiple="multiple">
+                                            @foreach($partyTypes as $row)
+                                                <option value="{{$row->id}}">{{$row->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Facility</span>
@@ -187,6 +218,8 @@
                                             <div class="input-group mb-5 gnInput">
                                                 <span class="input-group-addon">Package Name</span>
                                                 <input type="text" name="package[]" class="form-control" value="{{$row['name'] ?? ''}}" placeholder="Package Name" required/>
+                                                <span class="input-group-addon">Item</span>
+                                                <input type="text" name="items[]" class="form-control" value="{{$row['item'] ?? ''}}" placeholder="Package Item" required/>
                                                 <span class="input-group-addon">Price</span>
                                                 <input type="number" name="price[]" class="form-control" min="0" value="{{$row['price'] ?? 0}}" placeholder="Package Price" required/>
                                                 <span class="input-group-btn">
@@ -194,6 +227,21 @@
                                                 </span>
                                             </div>
 
+                                        @endforeach
+                                    </div>
+
+                                    <div class="mb-5"><button id="addFaq" type="button" class="btn btn-link"><i class="icon-plus2"></i> Add FAQ</button></div>
+                                    <div id="faqShow">
+                                        @foreach($faq_json as $row)
+                                            <div class="input-group mb-5 gnInput">
+                                                <span class="input-group-addon">Question</span>
+                                                <input type="text" name="question[]" class="form-control" value="{{$row['question'] ?? ''}}" placeholder="FAQ Question" required/>
+                                                <span class="input-group-addon">Answer</span>
+                                                <input type="text" name="answer[]" class="form-control" value="{{$row['answer'] ?? ''}}" placeholder="Answer This" required/>
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger delInput" type="button">X</button>
+                                                </span>
+                                            </div>
                                         @endforeach
                                     </div>
 
@@ -291,11 +339,14 @@
             });
 
 
+
             $('#addPackage').click(function () {
 
                 $('#packageShow').append('<div class="input-group mb-5 gnInput">\n' +
                     ' <span class="input-group-addon">Package Name</span>\n' +
                     ' <input type="text" name="package[]" class="form-control" placeholder="Package Name" required/>\n' +
+                    ' <span class="input-group-addon">Item</span>\n' +
+                    ' <input type="text" name="items[]" class="form-control" placeholder="Package Item" required/>\n' +
                     ' <span class="input-group-addon">Price</span>\n' +
                     ' <input type="number" name="price[]" class="form-control" min="0" value="0" placeholder="Package Price" required/>\n' +
                     ' <span class="input-group-btn">\n' +
@@ -307,6 +358,25 @@
                     $(this).parents('.gnInput').remove();
                 });
             });
+
+
+            $('#addFaq').click(function () {
+
+                $('#faqShow').append('<div class="input-group mb-5 gnInput">\n' +
+                    ' <span class="input-group-addon">Question</span>\n' +
+                    ' <input type="text" name="question[]" class="form-control" placeholder="FAQ Question" required/>\n' +
+                    ' <span class="input-group-addon">Answer</span>\n' +
+                    ' <input type="text" name="answer[]" class="form-control" placeholder="Answer This" required/>\n' +
+                    ' <span class="input-group-btn">\n' +
+                    '   <button class="btn btn-danger delInput" type="button">X</button>\n' +
+                    '  </span>\n' +
+                    '</div>');
+
+                $('.delInput').click(function () {
+                    $(this).parents('.gnInput').remove();
+                });
+            });
+
 
             $('#addPhoto').click(function () {
 
@@ -358,11 +428,17 @@
 
         $(function () {
 
+            $('#locationSet').val("{{$table->locationID}}");
+            $('#venueBooking').val("{{$table->serviceType}}");
+
             $('#facility').val([{{$facilitys}}]);
             $('#facility').select2();
 
             $('#rules').val([{{$ruleses}}]);
             $('#rules').select2();
+
+            $('#partyTypes').val([{{$partyType}}]);
+            $('#partyTypes').select2();
 
         });
 

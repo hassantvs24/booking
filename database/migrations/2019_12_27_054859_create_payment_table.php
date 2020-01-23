@@ -18,7 +18,8 @@ class CreatePaymentTable extends Migration
             $table->bigInteger('userID')->unsigned()->index();
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade')->onUpdate('No Action');
             $table->string('payMethod',20)->default('Cash');
-            $table->json('payDescription')->nullable();
+            //$table->json('payDescription')->nullable();
+            $table->text('payDescription')->nullable();
             $table->string('payType',3)->default('IN');
             $table->double('amountIN')->default(0);
             $table->double('amountOUT')->default(0);

@@ -96,10 +96,6 @@ function pub_month($date){
 
 
 
-
-
-
-
 if (! function_exists('db_date')) {
     function db_date($date){
         if($date == '' || $date == null){
@@ -275,6 +271,20 @@ function name_gen($routs){
     }
 
     return $result;
+}
+
+function build_http_query( $query ){
+
+    $query_array = array();
+
+    foreach( $query as $key => $key_value ){
+
+        $query_array[] = urlencode( $key ) . '=' . urlencode( $key_value );
+
+    }
+
+    return implode( '&', $query_array );
+
 }
 
 

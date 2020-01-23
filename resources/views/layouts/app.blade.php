@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Hostel</title>
+    <title>Booking</title>
 
     <!-- Global stylesheets -->
     <link href="{{asset('public/fonts.css')}}" rel="stylesheet" type="text/css">

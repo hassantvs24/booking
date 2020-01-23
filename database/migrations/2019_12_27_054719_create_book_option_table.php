@@ -20,10 +20,13 @@ class CreateBookOptionTable extends Migration
             $table->bigInteger('serviceID')->unsigned()->index();
             $table->foreign('serviceID')->references('id')->on('services')->onDelete('cascade')->onUpdate('No Action');
             $table->date('serviceDate');
-            $table->time('fromTime')->nullable();//Get From Time Slot
-            $table->time('toTime')->nullable();//Get From Time Slot
+            $table->bigInteger('timeSlotID')->unsigned()->index();//Get From Time Slot
+            $table->foreign('timeSlotID')->references('id')->on('time_slot')->onDelete('No Action')->onUpdate('No Action');
+            $table->string('package')->nullable();
             $table->double('pricing')->default(0);
             $table->integer('qty')->default(0);
+            $table->timestamp('isComplete')->nullable();//is Null not complete
+            $table->unique(['bookingID', 'serviceID']);
             $table->softDeletes();
             $table->timestamps();
         });

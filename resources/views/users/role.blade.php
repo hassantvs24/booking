@@ -3,6 +3,7 @@
 @section('title')
     @lang('site.content.user_role_title')
 @endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-6">

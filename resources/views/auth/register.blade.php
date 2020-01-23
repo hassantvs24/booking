@@ -13,6 +13,22 @@
 
             <div class="content-divider text-muted form-group"><span>Your credentials</span></div>
 
+            <div class="form-group has-feedback has-feedback-left {{ $errors->has('userType') ? ' has-error' : '' }}">
+                <select name="userType" class="form-control" required>
+                    <option value="">Select User Type</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Agent">Agent</option>
+                </select>
+                <div class="form-control-feedback">
+                    <i class="icon-user-tie text-muted"></i>
+                </div>
+                @if ($errors->has('userType'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('userType') }}</strong>
+                    </span>
+                @endif
+            </div>
+
             <div class="form-group has-feedback has-feedback-left {{ $errors->has('name') ? ' has-error' : '' }}">
                 <input type="text" class="form-control" placeholder="User Name" name="name" value="{{ old('name') }}" required autofocus>
                 <div class="form-control-feedback">

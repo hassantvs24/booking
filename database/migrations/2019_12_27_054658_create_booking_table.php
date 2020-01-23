@@ -17,8 +17,12 @@ class CreateBookingTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('userID')->unsigned()->index();
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade')->onUpdate('No Action');
-            $table->double('discount')->default(0);
-            $table->double('additionalCost')->default(0);
+            $table->text('discount')->nullable();
+            $table->text('additionalCost')->nullable();
+            $table->text('otherDescription')->nullable();
+//            $table->json('discount')->nullable();
+//            $table->json('additionalCost')->nullable();
+//            $table->json('otherDescription')->nullable();
             $table->string('status', 30)->default('Pending');
             $table->softDeletes();
             $table->timestamps();
