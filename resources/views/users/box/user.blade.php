@@ -17,7 +17,7 @@
                             <span class="input-group-addon">Set User Type*</span>
                             <select type="text" name="userType" class="form-control" required>
                                 <option value="Customer">Customer</option>
-                                <option value="Agent">Agent</option>
+                                <option value="Vendor">Vendor</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Super Admin">Super Admin</option>
                             </select>

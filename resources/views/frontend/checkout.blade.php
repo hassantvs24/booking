@@ -135,6 +135,10 @@
                                 <form action="{{route('front.checkout-save')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="payAmount" value="{{$total_temp_val ?? 0}}">
+                                    @php
+                                        $remain_balance = Auth::user()->balance - $total_temp_val;
+                                    @endphp
+                                    <input type="hidden" id="balance" name="balance" value="{{$remain_balance ?? 0}}">
                                     <div class="form-item">
                                         <select id="payMethod" class="country-select" name="payMethod" required>
                                             <option value="">Select Payment Method First</option>
@@ -142,17 +146,19 @@
                                             <option value="Bank">Bank</option>
                                             <option value="Bkash">Bkash</option>
                                             <option value="Rocket">Rocket</option>
+                                            <option value="Account">Account Fund</option>
                                         </select>
                                     </div>
 
                                     <div id="payForm">&nbsp;</div>
+
                                     <div class="form-item">
                                         <input name="additionalInformation" placeholder="Additional Information" />
                                     </div><br>
 
 
                                     <div class="text-center">
-                                        <button type="submit" class="custom-btn">
+                                        <button id="payNow" type="submit" class="custom-btn">
                                             pay now
                                         </button>
                                     </div>
@@ -251,9 +257,26 @@
                 '                                    <div class="form-item">\n' +
                 '                                        <input name="transectionID" type="text" placeholder="Transaction ID" required>\n' +
                 '                                    </div>';
+            var acc = '<div class="form-item-group">\n' +
+                '                                        <ul>\n' +
+                '                                            <li>Require Balance: <b>{{money_c($total_temp_val)}}</b></li>\n' +
+                '                                            <li>Found: <b>{{money_c(Auth::user()->balance)}}</b></li>\n' +
+                '                                            <li>Remaining: <b>{{money_c(Auth::user()->balance - $total_temp_val)}}</b></li>\n' +
+                '                                        </ul>\n' +
+                '                                    </div>';
 
            $('#payMethod').change(function () {
                var paymethod = $(this).val();
+               var balance = $('#balance').val();
+
+               if(paymethod == 'Account' && balance < 0){
+                   $('#payNow').attr('disabled', 'disabled');
+                   $('#payNow').html('Payment Not Possible');
+
+               }else{
+                   $('#payNow').removeAttr('disabled');
+                   $('#payNow').html('Pay Now');
+               }
 
                //alert(paymethod);
 
@@ -269,6 +292,9 @@
                        break;
                    case 'Rocket':
                        $('#payForm').html(rocket);
+                       break;
+                   case 'Account':
+                       $('#payForm').html(acc);
                        break;
                    case '':
                        $('#payForm').html('&nbsp;');

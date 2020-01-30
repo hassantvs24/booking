@@ -54,11 +54,14 @@ return [
 
         'booking_task_title' => 'Booking Task',
         'booking_task_page' => 'Booking Task',
-        'booking_task_approved' => 'Approved Booking Task',
-        'booking_task_cancel' => 'Cancel Booking Task',
+        'booking_task_approved' => 'Approved Booking',
+        'booking_task_cancel' => 'Cancel Booking',
+        'booking_task_complete' => 'Task is Complete',
+        'booking_task_reback' => 'Task is Incomplete',
 
         'old_booking_title' => 'Old Booking',
         'old_booking_page' => 'Old Booking',
+        'show_booking' => 'Booking Information',
 
         'service_title' => 'Service',
         'service_page' => 'All Service',

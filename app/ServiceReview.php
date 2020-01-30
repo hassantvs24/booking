@@ -8,6 +8,6 @@ class ServiceReview extends Model
 {
     protected $table = 'service_review';
     protected $fillable = [
-        'userID', 'serviceID', 'rating', 'comment'
+        'userID', 'serviceID', 'bookingID', 'rating', 'comment'
     ];
 }

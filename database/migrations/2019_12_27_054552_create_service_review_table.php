@@ -19,8 +19,11 @@ class CreateServiceReviewTable extends Migration
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade')->onUpdate('No Action');
             $table->bigInteger('serviceID')->unsigned()->index();
             $table->foreign('serviceID')->references('id')->on('services')->onDelete('cascade')->onUpdate('No Action');
+            $table->bigInteger('bookingID')->unsigned()->index();
+            $table->foreign('bookingID')->references('id')->on('booking')->onDelete('cascade')->onUpdate('No Action');
             $table->float('rating')->default(0);
             $table->string('comment');
+            $table->unique(['userID', 'serviceID', 'bookingID']);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -25,6 +25,7 @@ class CreatePaymentTable extends Migration
             $table->double('amountOUT')->default(0);
             $table->string('ref',20)->default('Booking');
             $table->bigInteger('refID')->nullable();
+            $table->boolean('isRefund')->default(0);
             $table->string('notes')->nullable();
             $table->softDeletes();
             $table->timestamps();

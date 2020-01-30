@@ -41,6 +41,7 @@
         Route::get('checkout/del-cart/{id}', 'Frontend\CheckoutController@del_cart')->name('front.del-cart');
 
         Route::get('customer/', 'Frontend\CustomerController@index')->name('front.user');
+        Route::post('review/', 'Frontend\CustomerController@review_save')->name('front.review-save');
     });
 
     Route::get('login-register/', 'Frontend\LoginRegisterController@index')->name('front.login-register');
@@ -48,9 +49,6 @@
 
 
 
-    Route::get('not-found/', function (){
-        return view('frontend.404');
-    })->name('front.not-found');
 
 /*
  * ==================== /Frontend ====================
@@ -66,10 +64,14 @@ Route::group(['middleware' => 'auth'], function () {
          */
 
         Route::get('booking/list', 'Booking\BookingController@index')->name('new-booking');
+        Route::get('booking/{id}', 'Booking\BookingController@show_booking')->name('booking-show');
+        Route::post('booking/status', 'Booking\BookingController@status')->name('booking-status');
 
-        Route::get('booking/task', 'Booking\TaskController@index')->name('booking-task');
 
-        Route::get('booking/old', 'Booking\OldBookingController@index')->name('old-booking');
+        Route::get('booking/running/task', 'Booking\TaskController@index')->name('booking-task');
+        Route::get('booking/task/{id}', 'Booking\TaskController@change_status')->name('task-complete');
+
+        Route::get('booking/old/archive', 'Booking\OldBookingController@index')->name('old-booking');
 
         /*
          * ==================== /Booking ====================
@@ -156,11 +158,8 @@ Route::get('savestate', 'MainController@saveState');
 //Route::get('key', 'MainController@key');
 //==================== /Toggle Sidebar =======================
 
-Route::get('/catch', function () {
-    Artisan::call('config:cache');
-    Artisan::call('view:cache');
-    Artisan::call('cache:clear');
-});
+Route::get('/catch', 'MainController@refresh')->name('front.refresh');
+Route::get('not-found/', 'MainController@not_found')->name('front.not-found');
 
 Auth::routes();
 

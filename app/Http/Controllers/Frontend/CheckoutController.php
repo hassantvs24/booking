@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Payment;
 use App\Services;
 use App\TempBook;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -78,8 +79,7 @@ class CheckoutController extends Controller
         //dd($request->all());
 
         //dd($uniq_value);
-        DB::beginTransaction();
-        try {
+
             $uniq_value = Cookie::get('unique_session');
             $userID = Auth::user()->id;
             $discount = collect(['types' => 'General', 'description' => '', 'amount' => 0]);
@@ -90,6 +90,10 @@ class CheckoutController extends Controller
             $table = TempBook::where('uniqValue', $uniq_value)->get();
 
             if($table->count() > 0){
+
+                DB::beginTransaction();
+                try {
+
                 $booking = new Booking();
                 $booking->userID = $userID;
                 $booking->discount = $discount->toJson();
@@ -136,6 +140,12 @@ class CheckoutController extends Controller
                     case "Rocket":
                         $payDescription = collect(['payMethod' => 'Rocket', 'rocketNo' => $request->rocketNo, 'transectionID' => $request->transectionID]);
                         break;
+                    case "Account":
+                        $user = User::find($userID);
+                        $user->balance = $request->balance;
+                        $user->save();
+                        $payDescription = collect(['payMethod' => 'Account', 'transectionID' => 1]);
+                        break;
                     default:
                         $payDescription = collect([]);
                 }
@@ -157,14 +167,16 @@ class CheckoutController extends Controller
                 $random = bcrypt(Str::random(20).date('Y-m-d H:i:s'));
                 Cookie::queue('unique_session', $random, 4320); //3 days remember
 
+                    DB::commit();
+                } catch (\Throwable $e) {
+                    DB::rollback();
+                    throw $e;
+                }
+
+            }else{
+                return redirect()->route('front.home')->with('error', true);
             }
 
-
-            DB::commit();
-        } catch (\Throwable $e) {
-            DB::rollback();
-            throw $e;
-        }
 
         return redirect()->route('front.home')->with('save', true);
     }

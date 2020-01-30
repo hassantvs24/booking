@@ -19,4 +19,12 @@ class Booking extends Model
         return $this->hasMany('App\BookOption', 'bookingID');
     }
 
+
+    public function payment(){
+        $table = Payment::where('ref', 'Booking')->where('refID', $this->id)->get();
+        return $table;
+    }
+
+
+
 }

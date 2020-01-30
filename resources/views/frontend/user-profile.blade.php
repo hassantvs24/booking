@@ -53,77 +53,131 @@
         <div id="absolute-eventmake-section" class="absolute-eventmake-section sec-ptb-170 bg-gray-light clearfix">
             <div class="eventmaking-wrapper">
                 <ul class="nav eventmake-tabs">
+
                     <li>
-                        <a class="active" data-toggle="tab" href="#profile">
-                            profile
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#ordersummary">
+                        <a class="active" data-toggle="tab" href="#ordersummary">
                             order summary
                         </a>
                     </li>
                     <li>
-                        <a data-toggle="tab" href="#changepassword">
-                            change password
+                        <a data-toggle="tab" href="#transactions">
+                            transaction history
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#profile">
+                            profile
                         </a>
                     </li>
                 </ul>
 
                 <div class="tab-content">
-                    <div id="profile" class="tab-pane fade in active show">
+
+                    <div id="ordersummary" class="tab-pane fade in active show">
+                        <h3>Current Balance: <b>{{money_c(Auth::user()->balance)}}</b></h3>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Date</th>
+                                    <th>Service</th>
+                                    <th>Company</th>
+                                    <th>Package</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($table as $row)
+                                    @php
+                                        $package_json = json_decode($row->package, true);
+                                    @endphp
+                                    <tr>
+                                        <td>{{$row->bookingID}}</td>
+                                        <td>
+                                            <p style="margin: 0px;">{{pub_date($row->created_at)}}</p>
+                                            <small>{{$row->time_slot['name'] ?? ''}} ({{date('ha', strtotime($row->time_slot['fromTime']))}}-{{date('ha', strtotime($row->time_slot['toTime']))}})</small>
+                                        </td>
+                                        <td>{{$row->service['serviceType'] ?? ''}}</td>
+                                        <td>{{$row->service['name'] ?? ''}}</td>
+                                        <td><b class="m-0">{{$package_json['name'] ?? ''}}</b> <small class="text-grey-300">({{$package_json['item']}})</small></td>
+                                        <td>
+                                            <p style="margin: 0px;">{{ money_c($row->pricing * $row->qty) }}</p>
+                                            <small>{{money_c($row->pricing)}} x {{$row->qty}}</small>
+                                        </td>
+                                        <td>
+
+                                            {{$row->booking['status'] ?? ''}}
+                                            @if($row->booking['status'] == 'Complete')
+                                                @php
+                                                    $review = $row->review();
+                                                @endphp
+                                                @if($review == null)
+                                                    <a href="#login-modal" data-booking="{{$row->bookingID}}"  data-service="{{$row->serviceID}}" type="button" class="login-modal-btn">Review</a>
+                                                @endif
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="transactions" class="tab-pane fade">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Booking ID</th>
+                                    <th>Payment Method</th>
+                                    <th>Description</th>
+                                    <th>IN</th>
+                                    <th>OUT</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $balance = 0;
+                                @endphp
+                                @foreach($payment as $row)
+                                <tr>
+                                    <td>{{pub_date($row->created_at)}}</td>
+                                    <td>{{$row->refID}}</td>
+                                    <td>{{$row->payMethod}}</td>
+                                    @if($row->payType == 'IN')
+                                        <td>Purchase Payment</td>
+                                        @else
+                                        <td>Payment Return</td>
+                                    @endif
+
+                                    <td>{{money_c($row->amountOUT)}}</td>
+                                    <td>{{money_c($row->amountIN)}}</td>
+                                    @php
+                                        $balance += ($row->amountOUT - $row->amountIN);
+                                    @endphp
+                                    <td>{{money_c($balance)}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="profile" class="tab-pane fade">
                         <table class="table table-bordered" style="width:500px;">
                             <tbody><tr>
-                                <th>Name</th>
-                                <td>John Doe</td>
+                                <th>User Name</th>
+                                <td>{{Auth::user()->name}}</td>
                             </tr>
                             <tr>
                                 <th>Email</th>
-                                <td>info@demo.com</td>
+                                <td>{{Auth::user()->email}}</td>
                             </tr>
                             <tr>
                                 <th>Mobile Number</th>
-                                <td>11223344</td>
+                                <td>{{Auth::user()->contact}}</td>
                             </tr>
-                            </tbody></table>
-                    </div>
-
-                    <div id="ordersummary" class="tab-pane fade">
-                        <table class="table table-bordered">
-                            <tbody><tr>
-                                <th>Booking ID</th>
-                                <th>Booking Details</th>
-                                <th>Booking Date</th>
-                                <th>Event Date</th>
-                                <th>Paid Amount</th>
-                                <th>Package</th>
-                                <th>No. of Guests</th>
-                                <th>Status</th>
-                            </tr>
-                            <tr>
-                                <td>25845</td>
-                                <td> Hiraba Farm, <br>
-                                    Behind Shalby Hospital, Garden Road, Prahlad Nagar , Ahmedabad-380015 <br>
-                                    Phone : +91-79-12345678 </td>
-                                <td>10 Jan 2020</td>
-                                <td>13 Jan 2020</td>
-                                <td>20,000 BDT</td>
-                                <td>Standard</td>
-                                <td>100</td>
-                                <td>Booked</td>
-                            </tr>
-                            </tbody></table>
-                    </div>
-                    <div id="changepassword" class="tab-pane fade">
-                        <form class="pro_form" action="" style="width:500px;">
-                            <input type="password" name="" class="form-control" id="" placeholder="Current Password">
-                            <br>
-                            <input type="password" name="" class="form-control" id="" placeholder="New Password">
-                            <br>
-                            <input type="password" name="" class="form-control" id="" placeholder="Confirm Password">
-                            <br>
-                            <button type="button" name="" class="custom-btn">Change Password</button>
-                        </form>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -134,13 +188,22 @@
     <!-- absolute-eventmake-section - end
     ================================================== -->
 
+    @include('shared.frontend.review')
+
 @endsection
 
 
 @section('script')
     <script type="text/javascript">
 
+        $('.login-modal-btn').click(function () {
+            var serviceID = $(this).data('service');
+            var bookingID = $(this).data('booking');
 
+            $('#reviewForm [name=serviceID]').val(serviceID);
+            $('#reviewForm [name=bookingID]').val(bookingID);
+
+        });
 
     </script>
 @endsection

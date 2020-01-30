@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
@@ -16,4 +17,17 @@ class MainController extends Controller
         }
     }
     //Toggle Sidebar
+
+    public function not_found(){
+        return view('frontend.404');
+    }
+
+
+    public function refresh(){
+        Artisan::call('config:cache');
+        Artisan::call('view:cache');
+        Artisan::call('cache:clear');
+
+        return 'Refresh Website';
+    }
 }
