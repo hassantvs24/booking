@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Booking;
 use App\BookOption;
 use App\Http\Controllers\Controller;
 use App\Payment;
 use App\ServiceReview;
 use App\Services;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Validator;
 class CustomerController extends Controller
 {
     public function index(){
-        $table = BookOption::orderBy('id', 'DESC')->get();
+        $selected = Booking::select('id')->where('userID', Auth::user()->id)->pluck('id')->toArray();
+
+        $table = BookOption::orderBy('id', 'DESC')->whereIn('bookingID', $selected)->get();
         $payment = Payment::where('userID', Auth::user()->id)->get();
         return view('frontend.user-profile')->with(['table' => $table, 'payment' => $payment]);
     }
@@ -27,7 +29,7 @@ class CustomerController extends Controller
             'userID' => 'required|numeric',
             'serviceID' => 'required|numeric',
             'bookingID' => 'required|numeric',
-            'rating' => 'required|numeric|min:1|max:10',
+            'rating' => 'required|numeric|min:1|max:5',
         ]);
 
         if ($validator->fails()) {
@@ -51,7 +53,6 @@ class CustomerController extends Controller
                 $table->rating = $request->rating;
                 $table->comment = $request->comment;
                 $table->save();
-
 
 
                 $rate = ServiceReview::where('serviceID', $request->serviceID)->avg('rating');

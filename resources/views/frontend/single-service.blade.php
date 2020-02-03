@@ -90,119 +90,13 @@
 
                         <!-- schedule-wrapper - start -->
                         <div class="schedule-wrapper">
-                            <!--<ul class="nav schedule-date-menu">
-                                <li><a class="active" data-toggle="tab" href="#day1">About Us</small></a></li>
-                                <li><a data-toggle="tab" href="#day2">Price & Menu</a></li>
-                                <li><a data-toggle="tab" href="#day3">Terms & Conditions</a></li>
-                            </ul>-->
 
                             <div class="tab-content">
-                                <!-- day 1 - start -->
+
                                 <div id="day1" class="tab-pane fade in active show">
                                     {!! urldecode($table->description) ?? '' !!}
                                 </div>
-                                <!-- day 1 - end -->
 
-                                <!-- day 2 - start -->
-                                <!--<div id="day2" class="tab-pane fade">-->
-
-
-                                    <!-- event-pricing-plan - start -->
-                                    <!--<div class="event-pricing-plan mb-80 clearfix">
-
-                                        <div class="pricing-list ul-li clearfix">
-                                            <ul>
-
-                                                <li class="pricing-table">
-                                                    <div class="pricing-header clearfix">
-                                                        <span class="amount">$19</span>
-                                                        <h3 class="pricing-table-title">standart</h3>
-                                                    </div>
-
-                                                    <div class="pricing-body clearfix">
-                                                        <ul>
-
-                                                            <li class="item-off">1-4 Person</li>
-                                                            <li class="item-off">2 Outfits</li>
-                                                            <li class="item-off">45 Minutes</li>
-                                                            <li class="item-on">10 Digital images</li>
-                                                            <li class="item-on">Print Release</li>
-                                                            <li class="item-on">Custom Album</li>
-
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="pricing-footer clearfix">
-                                                        <a href="#!" class="custom-btn">get this</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="pricing-table popular-pricing-table">
-                                                    <div class="pricing-header clearfix">
-                                                        <span class="amount">$59</span>
-                                                        <h3 class="pricing-table-title">professional</h3>
-                                                    </div>
-
-                                                    <div class="pricing-body clearfix">
-                                                        <ul>
-
-                                                            <li class="item-off">1-4 Person</li>
-                                                            <li class="item-off">2 Outfits</li>
-                                                            <li class="item-off">45 Minutes</li>
-                                                            <li class="item-on">10 Digital images</li>
-                                                            <li class="item-on">Print Release</li>
-                                                            <li class="item-on">Custom Album</li>
-
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="pricing-footer clearfix">
-                                                        <a href="#!" class="custom-btn">get this</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="pricing-table">
-                                                    <div class="pricing-header clearfix">
-                                                        <span class="amount">$99</span>
-                                                        <h3 class="pricing-table-title">enterprise</h3>
-                                                    </div>
-
-                                                    <div class="pricing-body clearfix">
-                                                        <ul>
-
-                                                            <li class="item-off">1-4 Person</li>
-                                                            <li class="item-off">2 Outfits</li>
-                                                            <li class="item-off">45 Minutes</li>
-                                                            <li class="item-on">10 Digital images</li>
-                                                            <li class="item-on">Print Release</li>
-                                                            <li class="item-on">Custom Album</li>
-
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="pricing-footer clearfix">
-                                                        <a href="#!" class="custom-btn">get this</a>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                     event-pricing-plan - end -->
-                                <!--</div>-->
-                                <!-- day 2 - end -->
-
-                                <!-- day 3 - start -->
-                                <!--<div id="day3" class="tab-pane fade">
-                                    <h3 class="event-title title-large mb-15">Terms 1</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                                    <h3 class="event-title title-large mb-15">Terms 2</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                                    <h3 class="event-title title-large mb-15">Terms 3</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                                </div>-->
-                                <!-- day 3 - end -->
                             </div>
                         </div>
                         <!-- schedule-wrapper - end -->
@@ -213,130 +107,48 @@
                     <br><br>
 
                     <div class="reviewer-comment-wrapper mb-30 clearfix">
+                        @php
+                            $comment = $table->review()->orderBy('id', 'DESC')->get();
+                        @endphp
 
                         <div class="section-title text-left mb-50">
                             <h2 class="big-title">Event <strong>reviews</strong></h2>
+                            <small>Rating: <b>{{$table->rating}}/5</b> ({{$comment->count()}})</small>
                         </div>
 
-                        <div class="comment-bar clearfix">
-                            <div class="admin-image">
-                                <img src="assets/images/admin.png" alt="Image_not_found">
-                            </div>
-                            <div class="comment-content">
-                                <div class="admin-name mb-15">
-                                    <div class="rateing-star ul-li clearfix">
-                                        <ul>
-                                            <li class="rated"><i class="fas fa-star"></i></li>
-                                            <li class="rated"><i class="fas fa-star"></i></li>
-                                            <li class="rated"><i class="fas fa-star"></i></li>
-                                            <li class="rated"><i class="fas fa-star"></i></li>
-                                            <li class="rated"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="name">
-                                        <a href="#!">john doe</a>
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    <p class="mb-30">
-                                        Brilliant production.  Enjoyed this as it captured so many emotions and being Irish some bits resonated with Irish families, the craic, singing.  Fantastic acting and so many surprises.
-                                    </p>
+                        @foreach($comment as $row)
 
-                                    <div class="meta-wrapper">
-                                        <div class="btn-group-left float-left">
-                                            <span class="title"><i class="fas fa-heart"></i> Helpful?</span>
+                            <div class="comment-bar clearfix">
+                                <div class="admin-image">
+                                    <img src="{{asset('public/frontend/assets/images/user_img.png')}}" alt="Image_not_found">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="admin-name mb-15">
+                                        <div class="rateing-star ul-li clearfix" title="{{$row->rating ?? 0}}">
                                             <ul>
-                                                <li><button type="button">Yes</button></li>
-                                                <li><button type="button">No</button></li>
-                                            </ul>
+                                                @for($i = 0; $i<floor($row->rating); $i++)
+                                                    <li class="rated"><i class="fas fa-star"></i></li>
+                                                @endfor
+                                            </ul> &nbsp;|&nbsp;
+                                            <small>{{pub_date($row->created_at)}}</small>
                                         </div>
-                                        <div class="btn-group-right float-right">
-                                            <ul>
-                                                <li><button type="button"><i class="fas fa-reply-all"></i> Replay</button></li>
-                                                <li><button type="button"><i class="fas fa-share-square"></i> Share</button></li>
-                                            </ul>
+                                        <div class="name">
+                                            <a href="#!">{{$row->user['name'] ?? 'Unnamed'}}</a>
                                         </div>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p class="mb-30">
+                                            {{$row->comment ?? ''}}
+                                        </p>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
-                    <div class="comment-form clearfix">
 
-                        <div class="section-title text-left mb-50">
-                            <h2 class="big-title">write a <strong>comment</strong></h2>
-
-                            <div class="rateing-star-wrapper">
-                                <span class="rating-title float-left">Your Rating:</span>
-                                <div class="rateing-star-form float-right">
-                                    <form action="#">
-
-                                        <div class="form-check clearfix">
-                                            <input type="checkbox">
-                                        </div>
-                                        <div class="form-check clearfix">
-                                            <input type="checkbox">
-                                        </div>
-                                        <div class="form-check clearfix">
-                                            <input type="checkbox">
-                                        </div>
-                                        <div class="form-check clearfix">
-                                            <input type="checkbox">
-                                        </div>
-                                        <div class="form-check clearfix">
-                                            <input type="checkbox">
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="form-wrapper">
-                            <form action="contact.php">
-                                <div class="row">
-
-                                    <!-- form-item - start -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-item mb-30">
-                                            <input type="text" name="name" placeholder="Your Name" required="">
-                                        </div>
-                                    </div>
-                                    <!-- form-item - end -->
-
-                                    <!-- form-item - start -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-item mb-30">
-                                            <input type="email" name="email" placeholder="Your Email Address" required="">
-                                        </div>
-                                    </div>
-                                    <!-- form-item - end -->
-
-                                    <!-- form-item - start -->
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="form-item mb-30">
-                                            <input type="tel" name="phone" placeholder="Your Phone" required="">
-                                        </div>
-                                    </div>
-                                    <!-- form-item - end -->
-
-                                    <!-- form-item - start -->
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="mb-30">
-                                            <textarea name="message" placeholder="Your Comment" required=""></textarea>
-                                        </div>
-                                        <button type="submit" class="custom-btn">SUBMIT NOW</button>
-                                    </div>
-                                    <!-- form-item - end -->
-
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
 
                 </div>
                 <!-- col - event-details - end -->

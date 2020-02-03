@@ -25,7 +25,7 @@
                     <div class="error-content">
                         <h2>404</h2>
                         <h3>error - page not found</h3>
-                        <p class="mb-30">something was wrong. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="mb-30">something was wrong. Please enter valid url.</p>
                         <li class="breadcrumb-item"><a href="{{route('front.home')}}" class="breadcrumb-link">Home</a></li>
                     </div>
                 </div>

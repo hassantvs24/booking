@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Booking;
 use App\Booking;
 use App\BookOption;
 use App\Http\Controllers\Controller;
+use App\Services;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
@@ -14,6 +16,13 @@ class TaskController extends Controller
         $bookingIDs = Booking::select('id')->where('status', 'Running')->pluck('id')->toArray();
 
         $table = BookOption::whereIn('bookingID', $bookingIDs)->get();
+
+        if(Auth::user()->userType == 'Vendor') {
+            $selected = Services::select('id')->where('vendorID', Auth::user()->id)->pluck('id')->toArray();
+
+            $table = BookOption::whereIn('bookingID', $bookingIDs)->whereIn('serviceID', $selected)->get();
+        }
+
 
         return view('booking.task')->with(['table' => $table]);
     }

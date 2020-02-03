@@ -46,7 +46,7 @@
                                 @foreach($contains as $row)
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="access[]" class="styled" value="{{$row['access']}}" {{$table->check($table->id, $row['access']) ? 'checked' : ''}}>
+                                            <input type="checkbox" name="access[]" class="styled" value="{{$row['access']}}" {{$table->check($row['access']) ? 'checked' : ''}}>
                                             {{$row['name']}}
                                         </label>
                                     </div>

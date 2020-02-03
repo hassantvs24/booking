@@ -23,6 +23,11 @@ class MainController extends Controller
     }
 
 
+    public function access(){
+        return view('frontend.access');
+    }
+
+
     public function refresh(){
         Artisan::call('config:cache');
         Artisan::call('view:cache');

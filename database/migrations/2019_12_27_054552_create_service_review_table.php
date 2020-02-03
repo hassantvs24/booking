@@ -22,7 +22,7 @@ class CreateServiceReviewTable extends Migration
             $table->bigInteger('bookingID')->unsigned()->index();
             $table->foreign('bookingID')->references('id')->on('booking')->onDelete('cascade')->onUpdate('No Action');
             $table->float('rating')->default(0);
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->unique(['userID', 'serviceID', 'bookingID']);
             $table->softDeletes();
             $table->timestamps();

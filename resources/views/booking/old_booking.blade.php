@@ -55,9 +55,9 @@
                                 <td>{!! $service !!}</td>
                                 <td class="text-right white_sp">
                                     @if($row->status == 'Complete')
-                                        <button class="btn btn-xs btn-success no-padding show_book_info" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
+                                        <button class="btn btn-xs btn-success no-padding show_book_info {{Auth::user()->access_view('booking-show')}}" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
                                         @else
-                                        <button class="btn btn-xs btn-warning no-padding show_book_info" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
+                                        <button class="btn btn-xs btn-warning no-padding show_book_info {{Auth::user()->access_view('booking-show')}}" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
                                     @endif
                                 </td>
                             </tr>

@@ -49,6 +49,19 @@
                                         </select>
                                     </div>
 
+                                    @if(Auth::user()->userType == 'Vendor')
+                                        <input type="hidden" name="vendorID" value="{{Auth::user()->id}}">
+                                        @else
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon">Vendor*</span>
+                                        <select type="text" name="vendorID" class="form-control select" required>
+                                            @foreach($vendor as $row)
+                                                <option value="{{$row->id}}">{{$row->name}} ({{$row->contact}})</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @endif
+
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Name*</span>
                                         <input type="text" name="name" class="form-control" placeholder="Service Name/Company" value="{{old('name')}}" required />

@@ -178,7 +178,7 @@ class CheckoutController extends Controller
             }
 
 
-        return redirect()->route('front.home')->with('save', true);
+        return redirect()->route('front.user')->with('save', true);
     }
 
 

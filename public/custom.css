@@ -133,3 +133,11 @@
         padding-top: 25px;
     }
 }
+
+.show_view{
+    display: block !important;
+}
+
+.hide_view{
+    display: none !important;
+}

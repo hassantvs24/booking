@@ -19,7 +19,7 @@
                     <input type="hidden" name="serviceID">
                     <input type="hidden" name="bookingID">
                     <div class="form-item">
-                        <input type="number" name="rating" min="1" max="10" step="any" placeholder="Rating 1 to 10" required>
+                        <input type="number" name="rating" min="1" max="5" step="any" placeholder="Rating 1 to 5" required>
                     </div>
                     <div class="form-item">
                         <input type="text" name="comment" placeholder="Comment">
@@ -27,8 +27,6 @@
                     <button type="submit" class="login-btn">review now</button>
                 </form>
             </div>
-
-
         </div>
         <!-- rightside-content - end -->
 

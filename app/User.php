@@ -24,6 +24,40 @@ class User extends Authenticatable
         return $this->belongsTo('App\UserRules', 'userRuleID');
     }
 
+
+    public function access($access){
+        $is_access = false;
+
+        if($this->userType == 'Super Admin'){
+            $is_access = true;
+        }else{
+            if($this->userRuleID != null){
+                $table = UserRules::find($this->userRuleID);
+                $is_access = $table->check($access);
+            }
+        }
+
+        return $is_access;
+    }
+
+    public function access_view($access){
+        $is_access = 'hidden';
+
+        if($this->userType == 'Super Admin'){
+            $is_access = '';
+        }else{
+            if($this->userRuleID != null){
+                $table = UserRules::find($this->userRuleID);
+                $c_access = $table->check($access);
+                if($c_access){
+                    $is_access = '';
+                }
+            }
+        }
+
+        return $is_access;
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

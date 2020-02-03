@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserRoleController extends Controller
 {
@@ -63,7 +64,7 @@ class UserRoleController extends Controller
         $permissions = [];
         foreach ($getRouteCollection as $route) {
             $access = $route->getName();
-            if($access != null && $access != 'login' && $access != 'logout' && $access != 'register' && $access != 'password.request' && $access != 'password.email' && $access != 'password.reset' && $access != 'password.update' && $access != 'password.confirm')
+            if(Str::contains($access, 'front.') == false && $access != null && $access != 'login' && $access != 'logout' && $access != 'register' && $access != 'password.request' && $access != 'password.email' && $access != 'password.reset' && $access != 'password.update' && $access != 'password.confirm')
 
                 $permissions[] = ['access' => $access, 'name' => name_gen($access)];
         }

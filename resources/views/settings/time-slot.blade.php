@@ -6,7 +6,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <p><button type="button" class="btn btn-primary btn-labeled" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.time_slot_add')</button></p>
+            <p><button type="button" class="btn btn-primary btn-labeled {{Auth::user()->access_view('time-slot-save')}}" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.time_slot_add')</button></p>
         </div>
         <div class="col-md-6"></div>
     </div>
@@ -36,13 +36,13 @@
                                 <td>{{date('h:i A',strtotime($row->fromTime))}}</td>
                                 <td>{{date('h:i A',strtotime($row->toTime))}}</td>
                                 <td class="text-right white_sp">
-                                    <button class="btn btn-xs btn-success no-padding mr-5 ediBtn"
+                                    <button class="btn btn-xs btn-success no-padding mr-5 ediBtn {{Auth::user()->access_view('time-slot-edit')}}"
                                             data-url="{{route('time-slot-edit', ['id' => $row->id])}}"
                                             data-name="{{$row->name}}"
                                             data-from="{{$row->fromTime}}"
                                             data-to="{{$row->toTime}}"
                                             data-toggle="modal" data-target="#ediModal" title="{{__('site.common.edi_title')}}"><i class="icon-pencil5"></i></button>
-                                    <a class="btn btn-xs btn-danger no-padding" href="{{route('time-slot-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
+                                    <a class="btn btn-xs btn-danger no-padding {{Auth::user()->access_view('time-slot-del')}}" href="{{route('time-slot-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
                                 </td>
                             </tr>
                         @endforeach

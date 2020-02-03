@@ -17,7 +17,7 @@
                 <select name="userType" class="form-control" required>
                     <option value="">Select User Type</option>
                     <option value="Admin">Admin</option>
-                    <option value="Agent">Agent</option>
+                    <option value="Vendor">Vendor</option>
                 </select>
                 <div class="form-control-feedback">
                     <i class="icon-user-tie text-muted"></i>

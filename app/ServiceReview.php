@@ -10,4 +10,9 @@ class ServiceReview extends Model
     protected $fillable = [
         'userID', 'serviceID', 'bookingID', 'rating', 'comment'
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User', 'userID');
+    }
+
 }

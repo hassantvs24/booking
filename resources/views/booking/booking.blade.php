@@ -55,9 +55,9 @@
                                 <td>{!! $service !!}</td>
                                 <td>{!! $price !!}</td>
                                 <td class="text-right white_sp">
-                                    <button class="btn btn-xs btn-success no-padding mr-5 approvedBtn" data-id="{{$row->id}}" data-toggle="modal" data-target="#approvedModal" title="{{__('site.common.approve_title')}}"><i class="icon-checkmark2"></i></button>
-                                    <button class="btn btn-xs btn-danger no-padding mr-5 cancelBtn" data-id="{{$row->id}}" data-amount="{{$full_amount}}" data-toggle="modal" data-target="#cancelModal" title="{{__('site.common.cancel_title')}}"><i class="icon-cross3"></i></button>
-                                    <button class="btn btn-xs btn-info no-padding show_book_info" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
+                                    <button class="btn btn-xs btn-success no-padding mr-5 approvedBtn {{Auth::user()->access_view('booking-status')}}" data-id="{{$row->id}}" data-toggle="modal" data-target="#approvedModal" title="{{__('site.common.approve_title')}}"><i class="icon-checkmark2"></i></button>
+                                    <button class="btn btn-xs btn-danger no-padding mr-5 cancelBtn {{Auth::user()->access_view('new-booking')}}" data-id="{{$row->id}}" data-amount="{{$full_amount}}" data-toggle="modal" data-target="#cancelModal" title="{{__('site.common.cancel_title')}}"><i class="icon-cross3"></i></button>
+                                    <button class="btn btn-xs btn-info no-padding show_book_info {{Auth::user()->access_view('booking-show')}}" data-url="{{route('booking-show', ['id' => $row->id])}}" data-toggle="modal" data-target="#bookingModal" title="{{__('site.common.view_title')}}"><i class="icon-eye"></i></button>
                                 </td>
                             </tr>
                         @endforeach

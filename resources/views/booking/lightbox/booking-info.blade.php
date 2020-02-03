@@ -64,7 +64,7 @@
                         @php
                             $package_json = json_decode($row->package, true);
                         @endphp
-                        <tr>
+                        <tr class="{{$row->isComplete != null ? 'text-success' : ''}}">
                             <td>{{$i}}</td>
                             <td>{{pub_date($row->serviceDate)}}</td>
                             <td>{{$row->time_slot['name'] ?? ''}} ({{date('ha', strtotime($row->time_slot['fromTime']))}}-{{date('ha', strtotime($row->time_slot['toTime']))}})</td>

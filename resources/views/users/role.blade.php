@@ -4,10 +4,11 @@
     @lang('site.content.user_role_title')
 @endsection
 
+
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <p><button type="button" class="btn btn-primary btn-labeled" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.user_role_add')</button></p>
+            <p><button type="button" class="btn btn-primary btn-labeled {{Auth::user()->access_view('user-role-save')}}" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.user_role_add')</button></p>
         </div>
         <div class="col-md-6">
             @if ($errors->any())
@@ -58,12 +59,12 @@
                                         </ul>
                                     </td>
                                     <td class="text-right white_sp">
-                                        <a class="btn btn-xs btn-info mr-5 no-padding" href="{{route('user-permission-show', ['id' => $row->id])}}" title="{{__('site.content.user_permission_title')}}"><i class="icon-cog"></i></a>
-                                        <button class="btn btn-xs btn-success no-padding mr-5 ediBtn"
+                                        <a class="btn btn-xs btn-info mr-5 no-padding {{Auth::user()->access_view('user-permission-show')}}" href="{{route('user-permission-show', ['id' => $row->id])}}" title="{{__('site.content.user_permission_title')}}"><i class="icon-cog"></i></a>
+                                        <button class="btn btn-xs btn-success no-padding mr-5 ediBtn {{Auth::user()->access_view('user-role-edit')}}"
                                                 data-url="{{route('user-role-edit', ['id' => $row->id])}}"
                                                 data-name="{{$row->name}}"
                                                 data-toggle="modal" data-target="#ediModal" title="{{__('site.common.edi_title')}}"><i class="icon-pencil5"></i></button>
-                                        <a class="btn btn-xs btn-danger no-padding" href="{{route('user-role-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
+                                        <a class="btn btn-xs btn-danger no-padding {{Auth::user()->access_view('user-role-del')}}" href="{{route('user-role-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

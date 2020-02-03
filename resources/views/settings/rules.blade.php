@@ -6,7 +6,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <p><button type="button" class="btn btn-primary btn-labeled" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.rules_add')</button></p>
+            <p><button type="button" class="btn btn-primary btn-labeled {{Auth::user()->access_view('rules-save')}}" data-toggle="modal" data-target="#myModal"><b><i class="icon-file-plus"></i></b> @lang('site.content.rules_add')</button></p>
         </div>
         <div class="col-md-6"></div>
     </div>
@@ -35,12 +35,12 @@
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->rulesFor}}</td>
                                 <td class="text-right white_sp">
-                                    <button class="btn btn-xs btn-success no-padding mr-5 ediBtn"
+                                    <button class="btn btn-xs btn-success no-padding mr-5 ediBtn {{Auth::user()->access_view('rules-edit')}}"
                                             data-url="{{route('rules-edit', ['id' => $row->id])}}"
                                             data-name="{{$row->name}}"
                                             data-rulesfor="{{$row->rulesFor}}"
                                             data-toggle="modal" data-target="#ediModal" title="{{__('site.common.edi_title')}}"><i class="icon-pencil5"></i></button>
-                                    <a class="btn btn-xs btn-danger no-padding" href="{{route('rules-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
+                                    <a class="btn btn-xs btn-danger no-padding {{Auth::user()->access_view('rules-del')}}" href="{{route('rules-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
                                 </td>
                             </tr>
                         @endforeach

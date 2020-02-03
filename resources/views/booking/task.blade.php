@@ -39,9 +39,9 @@
                                 <td>{{money_c($row->pricing * $row->qty)}}</td>
                                 <td class="text-right">
                                     @if($row->isComplete == null)
-                                        <a class="btn btn-xs btn-success no-padding" href="{{route('task-complete', ['id' => $row->id])}}" onclick='return confirm("Are you sure this task is complete?")' title="{{__('site.content.booking_task_complete')}}"><i class="icon-checkmark2"></i></a>
+                                        <a class="btn btn-xs btn-success no-padding {{Auth::user()->access_view('task-complete')}}" href="{{route('task-complete', ['id' => $row->id])}}" onclick='return confirm("Are you sure this task is complete?")' title="{{__('site.content.booking_task_complete')}}"><i class="icon-checkmark2"></i></a>
                                         @else
-                                        <a class="btn btn-xs btn-warning no-padding" href="{{route('task-complete', ['id' => $row->id])}}" onclick='return confirm("Are you sure this is incomplete task?")' title="{{__('site.content.booking_task_reback')}}"><i class="icon-undo2"></i></a>
+                                        <a class="btn btn-xs btn-warning no-padding {{Auth::user()->access_view('task-complete')}}" href="{{route('task-complete', ['id' => $row->id])}}" onclick='return confirm("Are you sure this is incomplete task?")' title="{{__('site.content.booking_task_reback')}}"><i class="icon-undo2"></i></a>
                                     @endif
                                 </td>
                             </tr>

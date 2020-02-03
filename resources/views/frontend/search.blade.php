@@ -131,22 +131,36 @@
                                     </div>
                                     <div class="event-info-list ul-li clearfix">
                                         <ul>
+
+                                            @php
+                                                $comment = $row->review()->count();
+                                            @endphp
+
                                             <li>
-													<span class="icon">
-														<i class="fas fa-map-marker-alt"></i>
-													</span>
+                                                <span class="icon">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                </span>
                                                 <div class="info-content">
                                                     <h3>Near {{$row->landmark}}, {{$row->address}}</h3>
                                                 </div>
                                             </li>
+                                            <li>
+                                                <span class="icon">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </span>
+                                                <div class="info-content">
+                                                    <h3>Rating: {{$row->rating}}/5 ({{$comment}})</h3>
+                                                </div>
+                                            </li>
                                             @if($searchType == 'Venue' || $searchType == 'Food & Catering' || $searchType == 'Event Planer' )
                                             <li>
-													<span class="icon">
-														<i class="fas fa-users"></i>
-													</span>
+                                                <span class="icon">
+                                                    <i class="fas fa-users"></i>
+                                                </span>
                                                 <div class="info-content">
                                                     <h3>{{$row->minGuest}} - {{$row->maxGuest}}</h3>
                                                 </div>
+
                                             </li>
                                             @endif
                                             <li>

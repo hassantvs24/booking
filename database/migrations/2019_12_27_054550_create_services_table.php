@@ -19,6 +19,8 @@ class CreateServicesTable extends Migration
             $table->string('name');
             $table->bigInteger('locationID')->nullable()->unsigned()->index();
             $table->foreign('locationID')->references('id')->on('location')->onDelete('set null')->onUpdate('No Action');
+            $table->bigInteger('vendorID')->nullable()->unsigned()->index();
+            $table->foreign('vendorID')->references('id')->on('users')->onDelete('cascade')->onUpdate('No Action');
             $table->decimal('lat')->default(23.777176);
             $table->decimal('lon')->default(90.399452);
             $table->integer('minGuest')->default(1);

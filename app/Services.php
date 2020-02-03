@@ -8,7 +8,7 @@ class Services extends Model
 {
     protected $table = 'services';
     protected $fillable = [
-        'serviceType', 'name', 'locationID', 'lat', 'lon', 'minGuest', 'maxGuest', 'landmark', 'email', 'website',
+        'serviceType', 'name', 'vendorID', 'locationID', 'lat', 'lon', 'minGuest', 'maxGuest', 'landmark', 'email', 'website',
         'photos', 'contact', 'pricing', 'facility', 'rules', 'additional', 'social', 'address', 'description', 'rating'
     ];
 
@@ -22,5 +22,13 @@ class Services extends Model
         $table = Rules::find($id);
 
         return $table->name;
+    }
+
+    public function review(){
+        return $this->hasMany('App\ServiceReview', 'serviceID');
+    }
+
+    public function vendor(){
+        return $this->belongsTo('App\User', 'vendorID');
     }
 }

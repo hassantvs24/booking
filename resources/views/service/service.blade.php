@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <p><a href="{{route('service-go-save')}}" class="btn btn-primary btn-labeled"><b><i class="icon-file-plus"></i></b> @lang('site.content.service_add')</a></p>
+            <p><a href="{{route('service-go-save')}}" class="btn btn-primary btn-labeled {{Auth::user()->access_view('service-go-save')}}"><b><i class="icon-file-plus"></i></b> @lang('site.content.service_add')</a></p>
         </div>
         <div class="col-md-6"></div>
     </div>
@@ -21,6 +21,7 @@
                         <thead>
                         <tr>
                             <th>S/N</th>
+                            <th>Vendor</th>
                             <th>Service Type</th>
                             <th>Service</th>
                             <th>Address</th>
@@ -31,12 +32,13 @@
                         @foreach($table as $row)
                             <tr>
                                 <td>{{$row->id}}</td>
+                                <td>{{$row->vendor['name']}}</td>
                                 <td>{{$row->serviceType}}</td>
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->address}}</td>
                                 <td class="text-right white_sp">
-                                    <a class="btn btn-xs btn-success no-padding mr-5" href="{{route('service-go-edit', ['id' => $row->id])}}" title="{{__('site.common.edi_title')}}"><i class="icon-pencil5"></i></a>
-                                    <a class="btn btn-xs btn-danger no-padding" href="{{route('service-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
+                                    <a class="btn btn-xs btn-success no-padding mr-5 {{Auth::user()->access_view('service-go-edit')}}" href="{{route('service-go-edit', ['id' => $row->id])}}" title="{{__('site.common.edi_title')}}"><i class="icon-pencil5"></i></a>
+                                    <a class="btn btn-xs btn-danger no-padding {{Auth::user()->access_view('service-del')}}" href="{{route('service-del', ['id' => $row->id])}}" onclick='return confirm("{{__('site.common.delete')}}")' title="{{__('site.common.del_title')}}"><i class="icon-bin"></i></a>
                                 </td>
                             </tr>
                         @endforeach

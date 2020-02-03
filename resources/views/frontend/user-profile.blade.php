@@ -74,7 +74,6 @@
                 <div class="tab-content">
 
                     <div id="ordersummary" class="tab-pane fade in active show">
-                        <h3>Current Balance: <b>{{money_c(Auth::user()->balance)}}</b></h3>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -123,6 +122,7 @@
                         </table>
                     </div>
                     <div id="transactions" class="tab-pane fade">
+                        <h3>Current Balance: <b>{{money_c(Auth::user()->balance)}}</b></h3>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -132,7 +132,6 @@
                                     <th>Description</th>
                                     <th>IN</th>
                                     <th>OUT</th>
-                                    <th>Balance</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -152,10 +151,6 @@
 
                                     <td>{{money_c($row->amountOUT)}}</td>
                                     <td>{{money_c($row->amountIN)}}</td>
-                                    @php
-                                        $balance += ($row->amountOUT - $row->amountIN);
-                                    @endphp
-                                    <td>{{money_c($balance)}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

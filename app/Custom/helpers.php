@@ -1,6 +1,5 @@
 <?php
 
-
 function money($amount){
         return '$'.number_format($amount, 2);
     }
@@ -157,31 +156,6 @@ function is_timestamp($timestamp)
 }
 
 
-function check_box($roleID, $values){
-    $table = App\Permission::where('roleID', $roleID)->where('values', $values)->get();
-
-    if($table->count() > 0){
-        return 'checked';
-    }else{
-        return '';
-    }
-}
-
-function is_show($route_name){
-    $roleID = Auth::user()->roleID;
-    $get_user_access = App\Permission::where('roleID', $roleID)->where('values', $route_name)->count();
-
-    if($roleID == 1){
-        return 'show_view';
-    }else{
-        if($get_user_access > 0){
-            return 'show_view';
-        }else{
-            return 'hide_view';
-        }
-    }
-}
-
 
 function in_word($num = false)
 {
@@ -286,5 +260,3 @@ function build_http_query( $query ){
     return implode( '&', $query_array );
 
 }
-
-
