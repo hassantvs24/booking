@@ -38,7 +38,8 @@ class ServiceController extends Controller
         $facility = Facility::orderBy('name', 'ASC')->get();
         $rules = Rules::orderBy('rulesFor', 'ASC')->orderBy('name', 'ASC')->get();
         $partyType = Party::orderBy('name', 'ASC')->get();
-        return view('service.action.save')->with(['vendor' => $vendor, 'location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
+        $city = Location::select('city')->orderBy('city', 'ASC')->where('city', '<>', null)->groupBy('city')->get();
+        return view('service.action.save')->with(['vendor' => $vendor, 'city' => $city, 'location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
     }
 
     public function go_edit($id){
@@ -48,7 +49,8 @@ class ServiceController extends Controller
         $facility = Facility::orderBy('name', 'ASC')->get();
         $rules = Rules::orderBy('rulesFor', 'ASC')->orderBy('name', 'ASC')->get();
         $partyType = Party::orderBy('name', 'ASC')->get();
-        return view('service.action.edit')->with(['table' => $table,'vendor' => $vendor, 'location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
+        $city = Location::select('city')->orderBy('city', 'ASC')->where('city', '<>', null)->groupBy('city')->get();
+        return view('service.action.edit')->with(['table' => $table, 'city' => $city, 'vendor' => $vendor, 'location' => $location, 'facility' => $facility, 'rules' => $rules, 'partyTypes' => $partyType]);
     }
 
     public function save(Request $request){

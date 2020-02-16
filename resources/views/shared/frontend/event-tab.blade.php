@@ -58,6 +58,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Venue">
                     <input type="hidden" name="serviceType" value="Venue Booking">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -96,6 +113,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Food & Catering">
                     <input type="hidden" name="serviceType" value="Food & Catering">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -134,6 +168,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Photographer">
                     <input type="hidden" name="serviceType" value="Photographer">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -168,6 +219,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Makeup Artist">
                     <input type="hidden" name="serviceType" value="Makeup Artist">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -202,6 +270,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Henna Artist">
                     <input type="hidden" name="serviceType" value="Henna Artist">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -236,6 +321,23 @@
                 <form action="{{route('front.search')}}" method="get" autocomplete="off">
                     <input type="hidden" name="searchType" value="Event Planer">
                     <input type="hidden" name="serviceType" value="Event Planer">
+                    <ul class="mb-1">
+                        <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                    </ul>
                     <ul>
 
                         <li>
@@ -276,6 +378,22 @@
                     <ul>
 
                         <li>
+                            <select class="citySet" type="text" name="city" required>
+                                @foreach($city as $row)
+                                    <option value="{{$row->city}}">{{$row->city}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
+                            <select type="text" class="locationSet" name="locationID" required>
+                                @foreach($location as $row)
+                                    <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </li>
+
+                        <li>
                             <input name="cardNumber" type="number" min="0" placeholder="Number of Card" required>
                         </li>
                         <li>
@@ -286,8 +404,8 @@
                                 @endforeach
                             </select>
                         </li>
-                        <li style="width: 38%;">
-                            <button type="submit" class="custom-btn">search invitation card</button>
+                        <li>
+                            <button type="submit" class="custom-btn">search</button>
                         </li>
 
                     </ul>

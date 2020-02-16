@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\BookOption;
 use App\Http\Controllers\Controller;
+use App\Location;
 use App\Party;
 use App\Services;
 use App\TimeSlot;
@@ -24,9 +25,14 @@ class EventController extends Controller
         $partyType = $request->partyType;
         $guestNumber = $request->guestNumber;
         $cardNumber = $request->cardNumber;
+        $locationID = $request->locationID;
+        $cityID = $request->city;
 
         $time_slot = TimeSlot::orderBy('name')->get();
         $party_type = Party::orderBy('name')->get();
+
+        $location = Location::orderBy('id', 'DESC')->get();
+        $city = Location::select('city')->orderBy('city', 'ASC')->where('city', '<>', null)->groupBy('city')->get();
 
         $booking = BookOption::select('serviceID')->where('serviceDate', $bookingDate)->where('timeSlotID', $timeSlotID)->get();
         $booking_arr = $booking->toArray();
@@ -34,7 +40,7 @@ class EventController extends Controller
         $total_event = $tables = Services::where('serviceType', $serviceType)->count();
 
         //->where('additional', 'like', '%partyType%'.$partyType.'%')
-        $tables = Services::where('serviceType', $serviceType)->where('additional', 'like', '%partyType%'.$partyType.'%')->whereNotIn('id', $booking_arr);
+        $tables = Services::where('serviceType', $serviceType)->where('locationID', $locationID)->where('additional', 'like', '%partyType%'.$partyType.'%')->whereNotIn('id', $booking_arr);
         if($guestNumber != null){
             $tables->where('minGuest', '<=', $guestNumber);
             $tables->where('maxGuest', '>=', $guestNumber);
@@ -58,6 +64,10 @@ class EventController extends Controller
             'time_slot' => $time_slot,
             'party_type' => $party_type,
             'total_event' => $total_event,
+            'location' => $location,
+            'city' => $city,
+            'locationID' => $locationID,
+            'cityID' => $cityID,
             ]);
     }
 

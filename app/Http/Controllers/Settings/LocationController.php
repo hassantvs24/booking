@@ -11,12 +11,14 @@ class LocationController extends Controller
 {
     public function index(){
         $table = Location::orderBy('id', 'DESC')->get();
-        return view('settings.location')->with(['table' => $table]);
+        $city = Location::select('city')->orderBy('city', 'ASC')->where('city', '<>', null)->groupBy('city')->get();
+        return view('settings.location')->with(['table' => $table, 'city' => $city]);
     }
 
     public function save(Request $request){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:191|min:2',
+            'city' => 'required|max:100|min:2',
+            'name' => 'required|max:100|min:2',
             'lat' => 'numeric',
             'lon' => 'numeric',
             'address' => 'max:191',
@@ -27,6 +29,7 @@ class LocationController extends Controller
         }
 
         $table = new Location();
+        $table->city = $request->city;
         $table->name = $request->name;
         $table->lat = $request->lat;
         $table->lon = $request->lon;
@@ -38,7 +41,8 @@ class LocationController extends Controller
 
     public function edit($id, Request $request){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:191|min:2',
+            'city' => 'required|max:100|min:2',
+            'name' => 'required|max:100|min:2',
             'lat' => 'numeric',
             'lon' => 'numeric',
             'address' => 'max:191',
@@ -49,6 +53,7 @@ class LocationController extends Controller
         }
 
         $table = Location::find($id);
+        $table->city = $request->city;
         $table->name = $request->name;
         $table->lat = $request->lat;
         $table->lon = $request->lon;

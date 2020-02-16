@@ -24,6 +24,7 @@
                         <thead>
                         <tr>
                             <th>S/N</th>
+                            <th>City</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Lat</th>
@@ -35,6 +36,7 @@
                         @foreach($table as $row)
                             <tr>
                                 <td>{{$row->id}}</td>
+                                <td>{{$row->city}}</td>
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->address}}</td>
                                 <td>{{$row->lat}}</td>
@@ -94,7 +96,7 @@
             $('.datatable').DataTable({
                 order: [[ 0, "desc" ]],
                 columnDefs: [
-                    { orderable: false, "targets": [5] }//For Column Order
+                    { orderable: false, "targets": [6] }//For Column Order
                 ]
             });
         });

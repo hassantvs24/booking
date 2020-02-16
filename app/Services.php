@@ -28,6 +28,10 @@ class Services extends Model
         return $this->hasMany('App\ServiceReview', 'serviceID');
     }
 
+    public function location(){
+        return $this->belongsTo('App\Location', 'locationID');
+    }
+
     public function vendor(){
         return $this->belongsTo('App\User', 'vendorID');
     }

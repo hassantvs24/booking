@@ -73,10 +73,19 @@
                                     </div>
 
                                     <div class="input-group mb-5">
+                                        <span class="input-group-addon">City*</span>
+                                        <select id="citySet" type="text" name="city" class="form-control">
+                                            @foreach($city as $row)
+                                                <option value="{{$row->city}}">{{$row->city}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group mb-5">
                                         <span class="input-group-addon">Location*</span>
-                                        <select type="text" name="locationID" class="form-control">
+                                        <select type="text" id="locationSet" name="locationID" class="form-control">
                                             @foreach($location as $row)
-                                                <option value="{{$row->id}}">{{$row->name}}</option>
+                                                <option data-city="{{$row->city}}" value="{{$row->id}}">{{$row->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -308,6 +317,17 @@
                     ['view', ['fullscreen']],
                     ['help', ['help']]
                 ]
+            });
+
+            $("#locationSet option").hide();
+            var city_select = $('#citySet').val();
+            $("#locationSet option[data-city='"+city_select+"']").show();
+
+            $('#citySet').change(function () {
+                $("#locationSet").val('');
+                $("#locationSet option").hide();
+                var city_select = $(this).val();
+                $("#locationSet option[data-city='"+city_select+"']").show();
             });
 
             $('.select').select2();

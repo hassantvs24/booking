@@ -242,6 +242,21 @@
     <script src="{{asset('public/frontend/assets/js/gijgo.min.js')}}"></script>
 
     <script type="text/javascript">
+
+        $(function () {
+            $(".locationSet option").hide();
+            $(".locationSet").val("{{$locationID}}");
+            $('.citySet').val("{{$cityID}}");
+            var city_select = "{{$cityID}}";
+            $(".locationSet option[data-city='"+city_select+"']").show();
+
+            $('.citySet').change(function () {
+                $(".locationSet").val("{{$locationID}}");
+                $(".locationSet option").hide();
+                var city_select = $(this).val();
+                $(".locationSet option[data-city='"+city_select+"']").show();
+            });
+        });
         
         
         $(function () {

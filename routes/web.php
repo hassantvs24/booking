@@ -47,9 +47,6 @@
     Route::get('login-register/', 'Frontend\LoginRegisterController@index')->name('front.login-register');
 
 
-
-
-
 /*
  * ==================== /Frontend ====================
  */

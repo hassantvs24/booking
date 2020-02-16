@@ -26,6 +26,15 @@
                             </div>
                             <div class="col-md-5">
                                 <div class="input-group mb-5">
+                                    <span class="input-group-addon">City Name*</span>
+                                    <input type="text"  list="city_save" name="city" class="form-control" placeholder="City Name" autocomplete="off" required />
+                                    <datalist id="city_save">
+                                        @foreach($city as $row)
+                                            <option value="{{$row->city}}">
+                                        @endforeach
+                                    </datalist>
+                                </div>
+                                <div class="input-group mb-5">
                                     <span class="input-group-addon">Location Name*</span>
                                     <input type="text" name="name" class="form-control" placeholder="Location Name" required />
                                 </div>
@@ -77,6 +86,15 @@
                                     <p class="cap1">Double Click On Map for pick Latitude and Longitude</p>
                                 </div>
                                 <div class="col-md-5">
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon">City Name*</span>
+                                        <input type="text" list="city_edit" name="city" class="form-control" placeholder="City Name" required />
+                                        <datalist id="city_edit">
+                                            @foreach($city as $row)
+                                                <option value="{{$row->city}}">
+                                            @endforeach
+                                        </datalist>
+                                    </div>
                                     <div class="input-group mb-5">
                                         <span class="input-group-addon">Location Name*</span>
                                         <input type="text" name="name" class="form-control" placeholder="Location Name" required />

@@ -73,6 +73,15 @@
                                     </div>
 
                                     <div class="input-group mb-5">
+                                        <span class="input-group-addon">City*</span>
+                                        <select id="citySet" type="text" name="city" class="form-control">
+                                            @foreach($city as $row)
+                                                <option value="{{$row->city}}">{{$row->city}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group mb-5">
                                         <span class="input-group-addon">Location*</span>
                                         <select id="locationSet" type="text" name="locationID" class="form-control">
                                             @foreach($location as $row)
@@ -441,7 +450,9 @@
 
         $(function () {
 
+            $('#citySet').val("{{$table->location['city']}}");
             $('#locationSet').val("{{$table->locationID}}");
+
             $('#venueBooking').val("{{$table->serviceType}}");
 
             $('#facility').val([{{$facilitys}}]);

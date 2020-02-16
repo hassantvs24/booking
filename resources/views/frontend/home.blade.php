@@ -867,6 +867,19 @@
 
     <script type="text/javascript">
 
+        $(function () {
+            $(".locationSet option").hide();
+            var city_select = $('.citySet').val();
+            $(".locationSet option[data-city='"+city_select+"']").show();
+
+            $('.citySet').change(function () {
+                $(".locationSet").val('');
+                $(".locationSet option").hide();
+                var city_select = $(this).val();
+                $(".locationSet option[data-city='"+city_select+"']").show();
+            });
+        });
+
 
         $(function () {
             $('#datepic1').datepicker({
